@@ -201,13 +201,35 @@
             line-height: 1.6;
         }
 
+        /* Hero Buttons & iOS Badge Styles */
         .hero-buttons { display: flex; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; align-items: center; }
         
         .store-badge {
-            transition: transform 0.3s ease, opacity 0.3s;
+            transition: transform 0.3s ease;
             display: inline-block;
         }
         .store-badge:hover { transform: translateY(-3px); }
+
+        .ios-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .coming-soon-label {
+            position: absolute;
+            top: -12px;
+            right: -10px;
+            background: var(--dark);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            z-index: 10;
+            letter-spacing: 0.5px;
+            border: 2px solid white;
+        }
 
         .trust-box {
             display: flex;
@@ -434,9 +456,13 @@
                         <a href="https://play.google.com/store/apps/details?id=com.napurisapuska.fi" target="_blank" class="store-badge">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" height="60">
                         </a>
-                        <a href="#" class="store-badge" style="opacity: 0.6; cursor: default;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" height="60">
-                        </a>
+                        
+                        <div class="ios-wrapper">
+                            <span class="coming-soon-label">TULOSSA</span>
+                            <a href="#" class="store-badge" style="opacity: 0.5; filter: grayscale(100%); cursor: default;">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" height="60">
+                            </a>
+                        </div>
                     </div>
 
                     <div class="trust-box">
@@ -606,6 +632,7 @@
                     <a href="https://play.google.com/store/apps/details?id=com.napurisapuska.fi" style="display:inline-block; margin-top:10px;">
                          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" width="150">
                     </a>
+                    <p style="color: #64748B; font-size: 0.8rem; margin-top: 10px;">iOS-versio tulossa pian</p>
                 </div>
             </div>
             <div class="footer-bottom">
