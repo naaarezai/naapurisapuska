@@ -8,7 +8,7 @@
 PRODUCT_NAME = naapurisapuska
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.naapurisapuska
+PRODUCT_BUNDLE_IDENTIFIER = com.napurisapuska.fi
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2025 com.example. All rights reserved.
