@@ -54,6 +54,14 @@
     <string>Tarvitsemme kameran käyttöoikeuden, jotta voit ottaa kuvan myytävästä ruoasta.</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>Tarvitsemme pääsyn kuviin, jotta voit valita kuvan ilmoitukseen galleriasta.</string>
-	
+
+	<key>NSLocationWhenInUseUsageDescription</key>
+    <string>Tarvitsemme sijaintisi näyttääksemme lähellä olevat ruokailmoitukset kartalla.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Tarvitsemme sijaintisi näyttääksemme lähellä olevat ruokailmoitukset.</string>
+    
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Tarvitsemme sijaintisi näyttääksemme lähellä olevat ruokailmoitukset kartalla.</string>
+
 </dict>
 </plist>
