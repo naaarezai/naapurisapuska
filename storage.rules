@@ -1,0 +1,22 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Ruokakuvat - sallitaan kaikille lukeminen ja kirjoittaminen kehitysvaiheessa
+    match /food_images/{imageId} {
+      // Kaikki voivat lukea kuvia
+      allow read: if true;
+      // Kaikki voivat ladata kuvia (kehitysvaiheessa)
+      // Tulevaisuudessa: allow write: if request.auth != null;
+      allow write: if true;
+    }
+    
+    // Profiilikuvat - sallitaan kaikille lukeminen ja kirjoittaminen kehitysvaiheessa
+    match /profile_images/{imageId} {
+      // Kaikki voivat lukea profiilikuvia
+      allow read: if true;
+      // Kaikki voivat ladata profiilikuvia (kehitysvaiheessa)
+      // Tulevaisuudessa: allow write: if request.auth != null;
+      allow write: if true;
+    }
+  }
+}

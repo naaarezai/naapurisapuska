@@ -1,0 +1,79 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Ruokailmoitukset - sallitaan kaikille lukeminen ja kirjoittaminen kehitysvaiheessa
+    match /food_items/{itemId} {
+      // Kaikki voivat lukea ilmoituksia
+      allow read: if true;
+      // Kaikki voivat lisätä ilmoituksia (kehitysvaiheessa)
+      // Tulevaisuudessa: allow write: if request.auth != null;
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+      
+      // Arvostelut - sallitaan kaikille lukeminen ja kirjoittaminen kehitysvaiheessa
+      match /ratings/{ratingId} {
+        allow read: if true;
+        allow create: if true;
+        allow update: if true;
+        allow delete: if true;
+      }
+    }
+    
+    // Käyttäjätiedot - sallitaan kaikille lukeminen ja kirjoittaminen kehitysvaiheessa
+    match /users/{userId} {
+      // Kaikki voivat lukea käyttäjätietoja
+      allow read: if true;
+      // Kaikki voivat luoda/päivittää käyttäjätietoja (kehitysvaiheessa)
+      // Tulevaisuudessa: allow write: if request.auth != null && request.auth.uid == userId;
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+      
+      // Suosikit - käyttäjä voi hallita vain omia suosikkejaan
+      match /favorites/{favoriteId} {
+        // Kaikki voivat lukea suosikkeja (kehitysvaiheessa)
+        // Tulevaisuudessa: allow read: if request.auth != null && request.auth.uid == userId;
+        allow read: if true;
+        // Kaikki voivat lisätä/poistaa suosikkeja (kehitysvaiheessa)
+        // Tulevaisuudessa: allow write: if request.auth != null && request.auth.uid == userId;
+        allow create: if true;
+        allow update: if true;
+        allow delete: if true;
+      }
+    }
+    
+    // Chatit - sallitaan kaikille lukeminen ja kirjoittaminen kehitysvaiheessa
+    match /chats/{chatId} {
+      // Kaikki voivat lukea chatteja (kehitysvaiheessa)
+      // Tulevaisuudessa: allow read: if request.auth != null && 
+      //                    (request.auth.uid in resource.data.participants);
+      allow read: if true;
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+      
+      // Viestit
+      match /messages/{messageId} {
+        // Kaikki voivat lukea ja kirjoittaa viestejä (kehitysvaiheessa)
+        // Tulevaisuudessa: allow read: if request.auth != null;
+        //                  allow create: if request.auth != null;
+        allow read: if true;
+        allow create: if true;
+        allow update: if true;
+        allow delete: if true;
+      }
+    }
+    
+    // Ilmoitukset (notifications) - sallitaan kaikille lukeminen ja kirjoittaminen kehitysvaiheessa
+    match /notifications/{notificationId} {
+      // Kaikki voivat lukea ilmoituksia (kehitysvaiheessa)
+      // Tulevaisuudessa: allow read: if request.auth != null && 
+      //                    request.auth.uid == resource.data.userId;
+      allow read: if true;
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+    }
+  }
+}

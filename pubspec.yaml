@@ -1,0 +1,76 @@
+name: naapurisapuska
+description: Naapuruston ruokahävikki-sovellus.
+publish_to: 'none'
+version: 1.0.2+3
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.0.0  # Tai uudempi
+  shared_preferences: ^2.2.2 # Tarvitaan tallennukseen
+  url_launcher: ^6.2.4  # LISÄÄ TÄMÄ
+
+
+  # Firebase (tietokanta ja todennus)
+  firebase_core: ^2.27.1
+  cloud_firestore: ^4.15.9
+  firebase_auth: ^4.17.9
+  firebase_storage: ^11.6.10
+  firebase_messaging: ^14.7.10
+
+  # Kartat ja sijainti
+  google_maps_flutter: ^2.6.1
+  geolocator: ^12.0.0
+
+  # Kamera ja kuvat
+  image_picker: ^1.0.7
+
+  # Apukirjastot
+  intl: ^0.19.0
+  cupertino_icons: ^1.0.6
+  
+  # Kuvan optimointi ja välimuisti
+  image: ^4.1.7
+  cached_network_image: ^3.3.1
+  
+  # HTTP-kutsuille (tekoäly-API)
+  http: ^1.1.0
+  
+  # Ympäristömuuttujat (.env-tiedosto)
+  flutter_dotenv: ^5.1.0
+  
+  # ML Kit - ilmainen offline-kuvan tunnistus
+  google_mlkit_image_labeling: ^0.11.0
+  
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  # Assets (kuvat, fontit, jne.)
+  assets:
+    - assets/logo.png
+    - assets/icon.png
+    - assets/.env
+    - assets/logo.png
+    - assets/onboarding_1.png
+    - assets/onboarding_2.png
+    - assets/onboarding_3.png
+
+# KORJATTU KOHTA: Tämä on nyt omassa lohkossaan vasemmassa reunassa
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#388E3C"
+  adaptive_icon_foreground: "assets/icon.png"
+  remove_alpha_ios: true
