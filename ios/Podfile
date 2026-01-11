@@ -35,5 +35,12 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
+    
+    # --- TÄMÄ ON SE UUSI KORJAUS ---
+    target.build_configurations.each do |config|
+      # Pakotetaan kaikki kirjastot käyttämään iOS 14.0 versiota
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+    end
+    # -------------------------------
   end
 end
