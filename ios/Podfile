@@ -36,11 +36,15 @@ post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
     
-    # --- TÄMÄ ON SE UUSI KORJAUS ---
     target.build_configurations.each do |config|
-      # Pakotetaan kaikki kirjastot käyttämään iOS 14.0 versiota
+      # Pakotetaan iOS 14.0 minimitasoksi
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+      
+      # TÄMÄ ON UUSI: Estetään Bitcode (Google Maps vaatii tämän usein)
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+      
+      # Korjataan linkkausongelmia
+      config.build_settings['STRIP_STYLE'] = 'non-global'
     end
-    # -------------------------------
   end
 end
