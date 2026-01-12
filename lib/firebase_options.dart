@@ -17,29 +17,17 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -59,4 +47,43 @@ class DefaultFirebaseOptions {
     projectId: 'napurisapuska',
     storageBucket: 'napurisapuska.firebasestorage.app',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCmwiZQqCwnfBb5pjgYM39eR75qAJvgtkA',
+    appId: '1:660382727156:web:672e9a08566f22192357a1',
+    messagingSenderId: '660382727156',
+    projectId: 'napurisapuska',
+    authDomain: 'napurisapuska.firebaseapp.com',
+    storageBucket: 'napurisapuska.firebasestorage.app',
+    measurementId: 'G-SQQNK649L1',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAI4HNz-Dq8CIDlw2xhtFmwVDwfALcuHCo',
+    appId: '1:660382727156:ios:698a8f8df80ac8e52357a1',
+    messagingSenderId: '660382727156',
+    projectId: 'napurisapuska',
+    storageBucket: 'napurisapuska.firebasestorage.app',
+    iosBundleId: 'com.napurisapuska.fi',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyAI4HNz-Dq8CIDlw2xhtFmwVDwfALcuHCo',
+    appId: '1:660382727156:ios:698a8f8df80ac8e52357a1',
+    messagingSenderId: '660382727156',
+    projectId: 'napurisapuska',
+    storageBucket: 'napurisapuska.firebasestorage.app',
+    iosBundleId: 'com.napurisapuska.fi',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCmwiZQqCwnfBb5pjgYM39eR75qAJvgtkA',
+    appId: '1:660382727156:web:77ce3a879cbeb0f52357a1',
+    messagingSenderId: '660382727156',
+    projectId: 'napurisapuska',
+    authDomain: 'napurisapuska.firebaseapp.com',
+    storageBucket: 'napurisapuska.firebasestorage.app',
+    measurementId: 'G-YRL9EFSKZX',
+  );
+
 }
