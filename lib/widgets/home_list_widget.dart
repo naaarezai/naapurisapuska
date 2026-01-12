@@ -3,7 +3,6 @@ import '../models/food_item.dart';
 import '../widgets/food_card.dart';
 import 'package:geolocator/geolocator.dart';
 
-/// Widget listanäkymälle ruokailmoituksista
 class HomeListWidget extends StatelessWidget {
   final List<FoodItem> foodItems;
   final Position? userPosition;
@@ -126,6 +125,9 @@ class HomeListWidget extends StatelessWidget {
             : ListView.builder(
                 controller: scrollController,
                 physics: const ClampingScrollPhysics(),
+                // --- TÄMÄ ON LISÄTTY (Nostaa listaa ylöspäin alhaalta): ---
+                padding: const EdgeInsets.only(bottom: 120, top: 10), 
+                
                 itemCount: foodItems.length,
                 itemBuilder: (context, index) {
                   final item = foodItems[index];

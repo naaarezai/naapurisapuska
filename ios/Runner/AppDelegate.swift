@@ -1,6 +1,6 @@
 import UIKit
 import Flutter
-import GoogleMaps // 1. LISÄÄ TÄMÄ
+import GoogleMaps
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
@@ -8,8 +8,14 @@ import GoogleMaps // 1. LISÄÄ TÄMÄ
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-    // 2. LISÄÄ TÄMÄ RIVI (Laita oma iOS API-avaimesi tähän)
+    // 1. Google Maps API-avain
     GMSServices.provideAPIKey("AIzaSyDT3PRXMzV80fePw2zw_OzBlUBMpJSjifM")
+
+    // 2. TÄMÄ RIVI PUUTTUI!
+    // Tämä on pakollinen, jotta ilmoitukset (ja se token) toimivat luotettavasti.
+    if #available(iOS 10.0, *) {
+      UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
+    }
 
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)

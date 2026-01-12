@@ -8,14 +8,22 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+// --- KORJAUS: Ladataan avaimet tässä (ennen android-lohkoa) ---
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("key.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+}
+
 android {
-    namespace = "com.napurisapuska.fi" 
+    namespace = "com.napurisapuska.fi"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+        isCoreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
@@ -30,32 +38,25 @@ android {
         versionName = flutter.versionName
     }
 
-    // Ladataan avaimet
-    val keystoreProperties = Properties()
-    val keystorePropertiesFile = rootProject.file("key.properties")
-    if (keystorePropertiesFile.exists()) {
-        keystoreProperties.load(FileInputStream(keystorePropertiesFile))
-    }
-
     signingConfigs {
         create("release") {
-            keyAlias = (keystoreProperties["keyAlias"] as String?) ?: "upload"
-            keyPassword = (keystoreProperties["keyPassword"] as String?) ?: "KJfisfe98392!003"
-            storeFile = file("upload-keystore.jks")
-            storePassword = (keystoreProperties["storePassword"] as String?) ?: "KJfisfe98392!003"
+            keyAlias = keystoreProperties["keyAlias"] as String? ?: "upload"
+            keyPassword = keystoreProperties["keyPassword"] as String? ?: "KJfisfe98392!003"
+            storeFile = keystoreProperties["storeFile"]?.let { file(it as String) }
+            storePassword = keystoreProperties["storePassword"] as String? ?: "KJfisfe98392!003"
         }
     }
 
     buildTypes {
         getByName("release") {
             signingConfig = signingConfigs.getByName("release")
-            // TÄRKEÄ MUUTOS: Otetaan optimointi pois päältä, jotta build menee läpi
             isMinifyEnabled = false
             isShrinkResources = false
         }
     }
 }
 
-flutter {
-    source = "../.."
+dependencies {
+    // Desugaring-kirjasto (pakollinen kun isCoreLibraryDesugaringEnabled = true)
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }

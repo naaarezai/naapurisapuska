@@ -8,7 +8,7 @@ import '../services/favorite_service.dart';
 import '../widgets/food_card.dart';
 import '../screens/login_screen.dart';
 import 'edit_profile_screen.dart';
-import 'food_detail_screen.dart'; // Tarvitaan navigointiin
+import 'food_detail_screen.dart'; 
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -46,6 +46,17 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
     );
     if (result == true) {
       setState(() {});
+    }
+  }
+
+  // --- UUSI: Uloskirjautuminen omana funktionaan ---
+  Future<void> _signOut() async {
+    await FirebaseAuth.instance.signOut();
+    if (mounted) {
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        (route) => false,
+      );
     }
   }
 
@@ -98,17 +109,34 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
     return Scaffold(
       appBar: AppBar(
         title: const Text('Oma Profiili'),
+        // --- UUSI: Valikko yläkulmassa ---
         actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: () async {
-              await FirebaseAuth.instance.signOut();
-              if (mounted) {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const LoginScreen()),
-                );
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              if (value == 'logout') {
+                _signOut();
+              } else if (value == 'delete') {
+                _deleteAccount();
               }
             },
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+              const PopupMenuItem<String>(
+                value: 'logout',
+                child: ListTile(
+                  leading: Icon(Icons.logout),
+                  title: Text('Kirjaudu ulos'),
+                  contentPadding: EdgeInsets.zero,
+                ),
+              ),
+              const PopupMenuItem<String>(
+                value: 'delete',
+                child: ListTile(
+                  leading: Icon(Icons.delete_forever, color: Colors.red),
+                  title: Text('Poista tili', style: TextStyle(color: Colors.red)),
+                  contentPadding: EdgeInsets.zero,
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -157,13 +185,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
-                    // POISTA TILI -NAPPI
-                    TextButton.icon(
-                      onPressed: _deleteAccount,
-                      icon: const Icon(Icons.delete_forever, color: Colors.red),
-                      label: const Text('Poista tili pysyvästi', style: TextStyle(color: Colors.red)),
-                    ),
+                    // "Poista tili" -nappi on poistettu tästä kohtaa!
                   ],
                 ),
               );
@@ -235,8 +257,6 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
       padding: const EdgeInsets.all(8), 
       itemCount: items.length, 
       itemBuilder: (context, index) {
-        // Tässä käytetään FoodCardia. Kun sitä painaa, se avaa FoodDetailScreenin.
-        // FoodDetailScreenissä hoidetaan logiikka: jos on oma, näytetään "Muokkaa", ei "Varaa".
         return FoodCard(foodItem: items[index]);
       }
     );
