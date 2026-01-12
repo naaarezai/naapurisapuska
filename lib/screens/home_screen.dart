@@ -577,7 +577,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 minChildSize: minChildSize,
                 maxChildSize: maxChildSize,
                 snap: true,
-                snapSizes: const [0.15, 0.95],
+                snapSizes: const [0.35, 0.95],
                 builder: (context, scrollController) {
                   return Container(
                     decoration: BoxDecoration(
@@ -601,19 +601,19 @@ class _HomeScreenState extends State<HomeScreen> {
                           onVerticalDragUpdate: (details) {
                             double delta = details.primaryDelta! / MediaQuery.of(context).size.height;
                             double newSize = _draggableController.size - delta;
-                            _draggableController.jumpTo(newSize.clamp(0.15, 0.95));
+                            _draggableController.jumpTo(newSize.clamp(0.25, 0.95));
                           },
                           onVerticalDragEnd: (details) {
                             const double velocityThreshold = -300.0;
                             if (details.primaryVelocity! < -velocityThreshold) {
                               _animateTo(0.95);
                             } else if (details.primaryVelocity! > velocityThreshold) {
-                              _animateTo(0.15);
+                              _animateTo(0.25);
                             } else {
                               if (_draggableController.size > 0.55) {
                                 _animateTo(0.95);
                               } else {
-                                _animateTo(0.15);
+                                _animateTo(0.25);
                               }
                             }
                           },
@@ -621,7 +621,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             if (_draggableController.size < 0.5) {
                               _animateTo(0.95);
                             } else {
-                              _animateTo(0.15);
+                              _animateTo(0.25);
                             }
                           },
                           child: Container(

@@ -126,7 +126,7 @@ class HomeListWidget extends StatelessWidget {
                 controller: scrollController,
                 physics: const ClampingScrollPhysics(),
                 // --- TÄMÄ ON LISÄTTY (Nostaa listaa ylöspäin alhaalta): ---
-                padding: const EdgeInsets.only(bottom: 120, top: 10), 
+                padding: const EdgeInsets.only(bottom: 200, top: 10), 
                 
                 itemCount: foodItems.length,
                 itemBuilder: (context, index) {
