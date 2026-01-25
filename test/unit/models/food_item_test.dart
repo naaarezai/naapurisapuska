@@ -102,7 +102,8 @@ void main() {
 
     test('pickedUp item created now is considered expired', () {
       // PickedUp items are considered expired/unavailable immediately
-      final now = DateTime.now();
+      // Use slightly past time to ensure DateTime.now().isAfter(timestamp) is true
+      final now = DateTime.now().subtract(const Duration(seconds: 1));
 
       final item = FoodItem(
         id: 'test128',
