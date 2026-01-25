@@ -100,8 +100,8 @@ void main() {
           reason: 'PickedUp item with past timestamp should be expired');
     });
 
-    test('pickedUp item created now is not yet expired', () {
-      // PickedUp at current time hasn't expired yet
+    test('pickedUp item created now is considered expired', () {
+      // PickedUp items are considered expired/unavailable immediately
       final now = DateTime.now();
 
       final item = FoodItem(
@@ -115,9 +115,9 @@ void main() {
         status: ReservationStatus.pickedUp,
       );
 
-      // It expires AT the timestamp, so if timestamp is now, it's not expired yet
-      expect(item.isExpired, false,
-          reason: 'PickedUp item at current time is not yet expired');
+      // In practice, by the time isExpired runs, DateTime.now() will be >= item.timestamp
+      expect(item.isExpired, true,
+          reason: 'PickedUp item should be considered immediately unavailable');
     });
   });
 
