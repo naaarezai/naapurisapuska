@@ -16,7 +16,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.1' # Matching user's version if known or latest stable
+          flutter-version: '3.38.7' # Matching user's local version
           channel: 'stable'
 
       - name: Install dependencies
