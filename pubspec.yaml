@@ -77,8 +77,6 @@ flutter:
   assets:
     - assets/logo.png
     - assets/icon.png
-    - assets/.env
-    - assets/logo.png
     - assets/onboarding_1.png
     - assets/onboarding_2.png
     - assets/onboarding_3.png
