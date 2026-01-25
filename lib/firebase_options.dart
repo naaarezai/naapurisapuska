@@ -85,5 +85,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'napurisapuska.firebasestorage.app',
     measurementId: 'G-YRL9EFSKZX',
   );
-
 }
