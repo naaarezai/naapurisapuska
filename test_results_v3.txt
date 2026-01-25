@@ -1,0 +1,49 @@
+00:00 +0: loading C:/naapurisapuska/test/widget/widgets/food_card_test.dart
+00:00 +0: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: (setUpAll)
+00:00 +0: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +0 -1: loading C:/naapurisapuska/test/unit/services/expiration_service_test.dart [E]
+  Failed to load "C:/naapurisapuska/test/unit/services/expiration_service_test.dart": [core/no-app] No Firebase App '[DEFAULT]' has been created - call Firebase.initializeApp()
+  package:firebase_core_platform_interface/src/method_channel/method_channel_firebase.dart 190:5  MethodChannelFirebase.app
+  package:firebase_core/src/firebase.dart 79:41                                                   Firebase.app
+  package:cloud_firestore/src/firestore.dart 33:21                                                FirebaseFirestore.instance
+  package:naapurisapuska/services/expiration_service.dart 8:53                                    new ExpirationService
+  test\unit\services\expiration_service_test.dart 12:21                                           main.<fn>
+  package:test_api                                                                                Declarer.group
+  package:flutter_test/src/test_compat.dart 210:13                                                group
+  test\unit\services\expiration_service_test.dart 9:3                                             main
+  
+00:01 +1 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +2 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +3 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +4 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +5 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +6 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +7 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +8 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +9 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +10 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +11 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item description
+00:01 +12 -1: C:/naapurisapuska/test/unit/models/food_item_test.dart: FoodItem Expiration Logic available item expires after 5 days
+00:01 +13 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +14 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +15 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +16 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +17 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +18 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +19 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +20 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +21 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +22 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +23 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +24 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +25 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +26 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +27 -1: C:/naapurisapuska/test/unit/models/food_item_test.dart: FoodItem Serialization fromMap creates correct FoodItem
+00:01 +28 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +29 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:01 +30 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows NEW badge for recent items
+00:01 +31 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests calls onTap when card is tapped
+00:02 +32 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests favorite icon toggles state
+00:02 +33 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays category badge
+00:02 +34 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: (tearDownAll)
+00:02 +34 -1: Some tests failed.

@@ -1,0 +1,7 @@
+Analyzing naapurisapuska...                                     
+
+   info - Statements in an if should be enclosed in a block - lib\screens\food_detail_screen.dart:352:7 - curly_braces_in_flow_control_structures
+  error - Undefined name 'MethodChannelFirebase' - test\helpers\firebase_mocks.dart:18:3 - undefined_identifier
+  error - Undefined name 'MethodChannelFirebase' - test\widget\widgets\food_card_test.dart:15:5 - undefined_identifier
+
+3 issues found. (ran in 8.1s)

@@ -1,0 +1,194 @@
+00:00 +0: loading C:/naapurisapuska/test/widget/integration_flow_test.dart
+00:00 +0: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:00 +1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:00 +2: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:00 +3: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:00 +4: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +4 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +4 -1: C:/naapurisapuska/test/unit/services/expiration_service_test.dart: ExpirationService - getExpirationText returns correct days text for multiple days [E]
+  Expected: 'Vanhenee 3 päivän kuluttua'
+    Actual: 'Vanhenee 2 päivän kuluttua'
+     Which: is different.
+            Expected: Vanhenee 3 päivän k ...
+              Actual: Vanhenee 2 päivän k ...
+                               ^
+             Differ at offset 9
+  
+  package:matcher                                       expect
+  package:flutter_test/src/widget_tester.dart 473:18    expect
+  test\unit\services\expiration_service_test.dart 66:7  main.<fn>.<fn>
+  
+00:01 +5 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +6 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +7 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +8 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +9 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +10 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +11 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +12 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +13 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +14 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +15 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +16 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +17 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +18 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +19 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +20 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +21 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +22 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +22 -2: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +22 -2: C:/naapurisapuska/test/unit/models/food_item_test.dart: FoodItem Expiration Logic pickedUp item created now is not yet expired [E]
+  Expected: <false>
+    Actual: <true>
+  PickedUp item at current time is not yet expired
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\unit\models\food_item_test.dart 119:7          main.<fn>.<fn>
+  
+00:02 +23 -2: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following FirebaseException was thrown building Builder:
+[core/no-app] No Firebase App '[DEFAULT]' has been created - call Firebase.initializeApp()
+
+The relevant error-causing widget was:
+  MaterialApp MaterialApp:file:///C:/naapurisapuska/test/widget/integration_flow_test.dart:55:12
+
+When the exception was thrown, this was the stack:
+#0      MethodChannelFirebase.app (package:firebase_core_platform_interface/src/method_channel/method_channel_firebase.dart:190:5)
+#1      Firebase.app (package:firebase_core/src/firebase.dart:79:41)
+#2      FirebaseAuth.instance (package:firebase_auth/src/firebase_auth.dart:38:47)
+#3      _FoodDetailScreenState.initState (package:naapurisapuska/screens/food_detail_screen.dart:62:41)
+#4      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5953:55)
+#5      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5796:5)
+...     Normal element mounting (260 frames)
+#265    Element.inflateWidget (package:flutter/src/widgets/framework.dart:4590:20)
+#266    MultiChildRenderObjectElement.inflateWidget (package:flutter/src/widgets/framework.dart:7269:36)
+#267    Element.updateChild (package:flutter/src/widgets/framework.dart:4059:18)
+#268    Element.updateChildren (package:flutter/src/widgets/framework.dart:4258:32)
+#269    MultiChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7302:17)
+#270    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#271    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#272    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#273    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#274    StatefulElement.update (package:flutter/src/widgets/framework.dart:6010:5)
+#275    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#276    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#277    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#278    ProxyElement.update (package:flutter/src/widgets/framework.dart:6152:5)
+#279    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#280    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#281    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#282    ProxyElement.update (package:flutter/src/widgets/framework.dart:6152:5)
+#283    _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:108:11)
+#284    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#285    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#286    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#287    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#288    StatefulElement.update (package:flutter/src/widgets/framework.dart:6010:5)
+#289    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#290    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#291    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#292    ProxyElement.update (package:flutter/src/widgets/framework.dart:6152:5)
+#293    _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:108:11)
+#294    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#295    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#296    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#297    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#298    StatefulElement.update (package:flutter/src/widgets/framework.dart:6010:5)
+#299    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#300    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#301    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#302    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#303    StatefulElement.update (package:flutter/src/widgets/framework.dart:6010:5)
+#304    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#305    SingleChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7125:14)
+#306    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#307    SingleChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7125:14)
+#308    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#309    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#310    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#311    ProxyElement.update (package:flutter/src/widgets/framework.dart:6152:5)
+#312    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#313    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#314    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#315    ProxyElement.update (package:flutter/src/widgets/framework.dart:6152:5)
+#316    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#317    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#318    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#319    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#320    BuildScope._tryRebuild (package:flutter/src/widgets/framework.dart:2750:15)
+#321    BuildScope._flushDirtyElements (package:flutter/src/widgets/framework.dart:2807:11)
+#322    BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:3111:18)
+#323    AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:1506:19)
+#324    RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:495:5)
+#325    SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1434:15)
+#326    SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1347:9)
+#327    AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:1335:9)
+#330    TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#331    AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:1324:27)
+#332    WidgetTester.pumpAndSettle.<anonymous closure> (package:flutter_test/src/widget_tester.dart:719:23)
+#335    TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#336    WidgetTester.pumpAndSettle (package:flutter_test/src/widget_tester.dart:712:27)
+#337    main.<anonymous closure> (file:///C:/naapurisapuska/test/widget/integration_flow_test.dart:90:18)
+<asynchronous suspension>
+#338    testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#339    TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1059:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 5 frames from dart:async and package:stack_trace)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +24 -2: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 0 widgets with text "Todella hyvä omena kauas kotoa.": []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/naapurisapuska/test/widget/integration_flow_test.dart:93:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1059:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/naapurisapuska/test/widget/integration_flow_test.dart line 93
+The test description was:
+  Navigation from FoodList to FoodDetail works and displays data
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +25 -2: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +26 -2: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following message was thrown:
+Multiple exceptions (2) were detected during the running of the current test, and at least one was
+unexpected.
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +26 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:02 +26 -3: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data [E]
+  Test failed. See exception logs above.
+  The test description was: Navigation from FoodList to FoodDetail works and displays data
+  
+Warning: At least one test in this suite creates an HttpClient. When running a test suite that uses
+TestWidgetsFlutterBinding, all HTTP requests will return status code 400, and no network request
+will actually be made. Any test expecting a real network connection and status code will fail.
+To test code that needs an HttpClient, provide your own HttpClient implementation to the code under
+test, so that your test can consistently provide a testable response to the code under test.
+00:02 +27 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:02 +28 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:02 +29 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:02 +30 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:02 +31 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:02 +32 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:02 +33 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows NEW badge for recent items
+00:02 +34 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests calls onTap when card is tapped
+00:03 +35 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests favorite icon toggles state
+00:03 +36 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays category badge
+00:03 +37 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays category badge
+00:03 +38 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: (tearDownAll)
+00:03 +38 -3: Some tests failed.

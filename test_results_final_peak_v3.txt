@@ -1,0 +1,230 @@
+00:00 +0: loading C:/naapurisapuska/test/widget/integration_flow_test.dart
+00:00 +0: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:00 +1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:00 +2: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:00 +3: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:00 +4: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:00 +5: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +6: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +7: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +8: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +9: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +10: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +11: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +12: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +13: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +14: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +15: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:01 +16: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +17: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +18: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +19: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +20: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +21: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +22: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +23: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +24: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +25: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +26: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +27: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +28: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +29: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +30: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +31: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +32: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +33: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +34: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+00:02 +35: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following FirebaseException was thrown building StreamBuilder<FoodItem>(dirty, state:
+_StreamBuilderBaseState<FoodItem, AsyncSnapshot<FoodItem>>#d2e8c):
+[core/no-app] No Firebase App '[DEFAULT]' has been created - call Firebase.initializeApp()
+
+The relevant error-causing widget was:
+  StreamBuilder<FoodItem>
+  StreamBuilder:file:///C:/naapurisapuska/lib/screens/food_detail_screen.dart:407:12
+
+When the exception was thrown, this was the stack:
+#0      MethodChannelFirebase.app (package:firebase_core_platform_interface/src/method_channel/method_channel_firebase.dart:190:5)
+#1      Firebase.app (package:firebase_core/src/firebase.dart:79:41)
+#2      FirebaseAuth.instance (package:firebase_auth/src/firebase_auth.dart:38:47)
+#3      _FoodDetailScreenState.build.<anonymous closure> (package:naapurisapuska/screens/food_detail_screen.dart:413:42)
+#4      StreamBuilder.build (package:flutter/src/widgets/async.dart:458:14)
+#5      _StreamBuilderBaseState.build (package:flutter/src/widgets/async.dart:123:48)
+#6      StatefulElement.build (package:flutter/src/widgets/framework.dart:5934:27)
+#7      ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5820:15)
+#8      StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#9      Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#10     ComponentElement._firstBuild (package:flutter/src/widgets/framework.dart:5802:5)
+#11     StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5976:11)
+#12     ComponentElement.mount (package:flutter/src/widgets/framework.dart:5796:5)
+...     Normal element mounting (268 frames)
+#280    Element.inflateWidget (package:flutter/src/widgets/framework.dart:4590:20)
+#281    MultiChildRenderObjectElement.inflateWidget (package:flutter/src/widgets/framework.dart:7269:36)
+#282    Element.updateChild (package:flutter/src/widgets/framework.dart:4059:18)
+#283    Element.updateChildren (package:flutter/src/widgets/framework.dart:4258:32)
+#284    MultiChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7302:17)
+#285    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#286    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#287    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#288    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#289    StatefulElement.update (package:flutter/src/widgets/framework.dart:6010:5)
+#290    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#291    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#292    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#293    ProxyElement.update (package:flutter/src/widgets/framework.dart:6152:5)
+#294    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#295    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#296    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#297    ProxyElement.update (package:flutter/src/widgets/framework.dart:6152:5)
+#298    _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:108:11)
+#299    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#300    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#301    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#302    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#303    StatefulElement.update (package:flutter/src/widgets/framework.dart:6010:5)
+#304    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#305    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#306    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#307    ProxyElement.update (package:flutter/src/widgets/framework.dart:6152:5)
+#308    _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:108:11)
+#309    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#310    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#311    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#312    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#313    StatefulElement.update (package:flutter/src/widgets/framework.dart:6010:5)
+#314    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#315    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#316    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#317    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#318    StatefulElement.update (package:flutter/src/widgets/framework.dart:6010:5)
+#319    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#320    SingleChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7125:14)
+#321    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#322    SingleChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7125:14)
+#323    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#324    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#325    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#326    ProxyElement.update (package:flutter/src/widgets/framework.dart:6152:5)
+#327    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#328    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#329    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#330    ProxyElement.update (package:flutter/src/widgets/framework.dart:6152:5)
+#331    Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#332    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#333    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#334    Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#335    BuildScope._tryRebuild (package:flutter/src/widgets/framework.dart:2750:15)
+#336    BuildScope._flushDirtyElements (package:flutter/src/widgets/framework.dart:2807:11)
+#337    BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:3111:18)
+#338    AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:1506:19)
+#339    RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:495:5)
+#340    SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1434:15)
+#341    SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1347:9)
+#342    AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:1335:9)
+#345    TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#346    AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:1324:27)
+#347    WidgetTester.pumpAndSettle.<anonymous closure> (package:flutter_test/src/widget_tester.dart:719:23)
+#350    TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#351    WidgetTester.pumpAndSettle (package:flutter_test/src/widget_tester.dart:712:27)
+#352    main.<anonymous closure> (file:///C:/naapurisapuska/test/widget/integration_flow_test.dart:90:18)
+<asynchronous suspension>
+#353    testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#354    TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1059:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 5 frames from dart:async and package:stack_trace)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following FirebaseException was thrown building StreamBuilder<FoodItem>(dirty, state:
+_StreamBuilderBaseState<FoodItem, AsyncSnapshot<FoodItem>>#d2e8c):
+[core/no-app] No Firebase App '[DEFAULT]' has been created - call Firebase.initializeApp()
+
+The relevant error-causing widget was:
+  StreamBuilder<FoodItem>
+  StreamBuilder:file:///C:/naapurisapuska/lib/screens/food_detail_screen.dart:407:12
+
+When the exception was thrown, this was the stack:
+#0      MethodChannelFirebase.app (package:firebase_core_platform_interface/src/method_channel/method_channel_firebase.dart:190:5)
+#1      Firebase.app (package:firebase_core/src/firebase.dart:79:41)
+#2      FirebaseAuth.instance (package:firebase_auth/src/firebase_auth.dart:38:47)
+#3      _FoodDetailScreenState.build.<anonymous closure> (package:naapurisapuska/screens/food_detail_screen.dart:413:42)
+#4      StreamBuilder.build (package:flutter/src/widgets/async.dart:458:14)
+#5      _StreamBuilderBaseState.build (package:flutter/src/widgets/async.dart:123:48)
+#6      StatefulElement.build (package:flutter/src/widgets/framework.dart:5934:27)
+#7      ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5820:15)
+#8      StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#9      Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#10     StatefulElement.update (package:flutter/src/widgets/framework.dart:6010:5)
+#11     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+#12     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5844:16)
+#13     StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5985:11)
+#14     Element.rebuild (package:flutter/src/widgets/framework.dart:5532:7)
+#15     BuildScope._tryRebuild (package:flutter/src/widgets/framework.dart:2750:15)
+#16     BuildScope._flushDirtyElements (package:flutter/src/widgets/framework.dart:2807:11)
+#17     BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:3111:18)
+#18     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:1506:19)
+#19     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:495:5)
+#20     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1434:15)
+#21     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1347:9)
+#22     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:1335:9)
+#25     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#26     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:1324:27)
+#27     WidgetTester.pumpAndSettle.<anonymous closure> (package:flutter_test/src/widget_tester.dart:719:23)
+<asynchronous suspension>
+#28     TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#29     main.<anonymous closure> (file:///C:/naapurisapuska/test/widget/integration_flow_test.dart:90:5)
+<asynchronous suspension>
+#30     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#31     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1059:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 0 widgets with text "Todella hyvä omena kauas kotoa.": []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/naapurisapuska/test/widget/integration_flow_test.dart:93:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1059:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/naapurisapuska/test/widget/integration_flow_test.dart line 93
+The test description was:
+  Navigation from FoodList to FoodDetail works and displays data
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following message was thrown:
+Multiple exceptions (3) were detected during the running of the current test, and at least one was
+unexpected.
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +35 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows NEW badge for recent items
+00:02 +35 -1: C:/naapurisapuska/test/widget/integration_flow_test.dart: Navigation from FoodList to FoodDetail works and displays data [E]
+  Test failed. See exception logs above.
+  The test description was: Navigation from FoodList to FoodDetail works and displays data
+  
+Warning: At least one test in this suite creates an HttpClient. When running a test suite that uses
+TestWidgetsFlutterBinding, all HTTP requests will return status code 400, and no network request
+will actually be made. Any test expecting a real network connection and status code will fail.
+To test code that needs an HttpClient, provide your own HttpClient implementation to the code under
+test, so that your test can consistently provide a testable response to the code under test.
+00:02 +36 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests calls onTap when card is tapped
+00:02 +37 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests favorite icon toggles state
+00:02 +38 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests favorite icon toggles state
+00:02 +39 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays category badge
+00:02 +40 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: (tearDownAll)
+00:03 +40 -1: Some tests failed.

@@ -1,0 +1,57 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Helper function to check authentication
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user is the owner
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Helper function to validate image file
+    function isValidImage() {
+      return request.resource.contentType.matches('image/.*');
+    }
+    
+    // Ruokakuvat (Food Images)
+    // Path structure: food_images/{userId}/{imageId}
+    match /food_images/{userId}/{imageId} {
+      // Kaikki voivat lukea ruokakuvia
+      allow read: if true;
+      
+      // Vain kirjautuneet käyttäjät voivat ladata kuvia omaan kansioonsa
+      // Max file size: 10MB
+      allow write: if isOwner(userId) &&
+                      request.resource.size < 10 * 1024 * 1024 &&
+                      isValidImage();
+      
+      // Vain omistaja voi poistaa omat kuvansa
+      allow delete: if isOwner(userId);
+    }
+    
+    // Profiilikuvat (Profile Images)  
+    // Path structure: profile_images/{userId}/{imageId}
+    match /profile_images/{userId}/{imageId} {
+      // Kaikki voivat lukea profiilikuvia
+      allow read: if true;
+      
+      // Vain käyttäjä itse voi ladata profiilikuvan omaan kansioonsa
+      // Max file size: 5MB
+      allow write: if isOwner(userId) &&
+                      request.resource.size < 5 * 1024 * 1024 &&
+                      isValidImage();
+      
+      // Vain omistaja voi poistaa oman profiilikuvansa
+      allow delete: if isOwner(userId);
+    }
+    
+    // Yleinen match kaikille muille poluille - estetään pääsy
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+00:00 +0: loading C:/naapurisapuska/test/widget/integration_flow_test.dart
+00:00 +0 -1: loading C:/naapurisapuska/test/widget/integration_flow_test.dart [E]
+  Failed to load "C:/naapurisapuska/test/widget/integration_flow_test.dart":
+  Compilation failed for testPath=C:/naapurisapuska/test/widget/integration_flow_test.dart: test/widget/integration_flow_test.dart:18:28: Error: Member not found: 'fruit'.
+      category: FoodCategory.fruit,
+                             ^^^^^
+  .
+  Error: The Dart compiler exited unexpectedly.
+  package:flutter_tools/src/base/common.dart 34:3  throwToolExit
+  package:flutter_tools/src/compile.dart 911:11    DefaultResidentCompiler._compile.<fn>
+  dart:async/zone.dart 1538:47                     _rootRunUnary
+  dart:async/zone.dart 1429:19                     _CustomZone.runUnary
+  dart:async/future_impl.dart 948:45               Future._propagateToListeners.handleValueCallback
+  dart:async/future_impl.dart 977:13               Future._propagateToListeners
+  dart:async/future_impl.dart 862:9                Future._propagateToListeners
+  dart:async/future_impl.dart 720:5                Future._completeWithValue
+  dart:async/future_impl.dart 804:7                Future._asyncCompleteWithValue.<fn>
+  dart:async/zone.dart 1525:13                     _rootRun
+  dart:async/zone.dart 1422:19                     _CustomZone.run
+  dart:async/zone.dart 1321:7                      _CustomZone.runGuarded
+  dart:async/zone.dart 1362:23                     _CustomZone.bindCallbackGuarded.<fn>
+  dart:async/schedule_microtask.dart 40:35         _microtaskLoop
+  dart:async/schedule_microtask.dart 49:5          _startMicrotaskLoop
+  dart:isolate-patch/isolate_patch.dart 127:13     _runPendingImmediateCallback
+  dart:isolate-patch/isolate_patch.dart 194:5      _RawReceivePort._handleMessage
+  
+00:00 +0 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: (setUpAll)
+00:00 +0 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +1 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +1 -2: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +1 -2: C:/naapurisapuska/test/unit/services/expiration_service_test.dart: ExpirationService - getDaysUntilExpiration calculates correct days for reserved item [E]
+  Expected: <3>
+    Actual: <2>
+  
+  package:matcher                                       expect
+  package:flutter_test/src/widget_tester.dart 473:18    expect
+  test\unit\services\expiration_service_test.dart 29:7  main.<fn>.<fn>
+  
+00:00 +2 -2: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +3 -2: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +3 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +3 -3: C:/naapurisapuska/test/unit/services/expiration_service_test.dart: ExpirationService - getExpirationText returns correct days text for multiple days [E]
+  Expected: 'Vanhenee 3 päivän kuluttua'
+    Actual: 'Vanhenee 2 päivän kuluttua'
+     Which: is different.
+            Expected: Vanhenee 3 päivän k ...
+              Actual: Vanhenee 2 päivän k ...
+                               ^
+             Differ at offset 9
+  
+  package:matcher                                       expect
+  package:flutter_test/src/widget_tester.dart 473:18    expect
+  test\unit\services\expiration_service_test.dart 66:7  main.<fn>.<fn>
+  
+00:01 +4 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +5 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +6 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +7 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +8 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +9 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +10 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +11 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +12 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +13 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +14 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item description
+00:01 +15 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +16 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +17 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +18 -3: C:/naapurisapuska/test/unit/models/food_item_test.dart: FoodItem Expiration Logic reserved item expires after 7 days
+00:01 +19 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +20 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +21 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +22 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +23 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +24 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +25 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +26 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +27 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +28 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +29 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +30 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +31 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +32 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:02 +33 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows NEW badge for recent items
+00:02 +34 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests calls onTap when card is tapped
+00:02 +35 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests favorite icon toggles state
+00:02 +36 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays category badge
+00:02 +37 -3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: (tearDownAll)
+00:02 +37 -3: C:/naapurisapuska/test/unit/services/user_service_test.dart: UserService DI Tests uses provided Firebase instances
+00:02 +38 -3: Some tests failed.

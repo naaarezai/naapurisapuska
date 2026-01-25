@@ -1,0 +1,355 @@
+{
+  "@@locale": "en",
+  
+  "appTitle": "NaapuriSapuska",
+  "@appTitle": {
+    "description": "Application title"
+  },
+  
+  "home": "Home",
+  "settings": "Settings",
+  "profile": "Profile",
+  "myProfile": "My Profile",
+  "login": "Login",
+  "logout": "Logout",
+  
+  "searchHint": "What are you craving...",
+  "filter": "Filter",
+  "notifications": "New Notifications",
+  "messages": "Messages",
+  "shareFood": "Share Food",
+  
+  "appearance": "Appearance",
+  "darkMode": "Dark Mode",
+  "darkModeDescription": "Use dark theme in the app",
+  
+  "themeMode": "Theme",
+  "themeModeSystem": "System",
+  "themeModeLight": "Light",
+  "themeModeDark": "Dark",
+  
+  "language": "Language",
+  "languageSystem": "System",
+  "languageFinnish": "Suomi",
+  "languageEnglish": "English",
+  
+  "about": "About",
+  "version": "Version",
+  "termsOfUse": "Terms of Use",
+  "privacyPolicy": "Privacy Policy",
+  "privacyPolicyTitle": "Privacy Policy",
+  "deleteAccount": "Delete Account",
+  "close": "Close",
+  
+  "deleteAccountTitle": "Delete account?",
+  "deleteAccountMessage": "This action will permanently delete your account and all your listings. This cannot be undone.",
+  "cancel": "Cancel",
+  "delete": "Delete Account",
+  "deleteAccountError": "Error deleting account. Please log in again and try immediately.",
+  
+  "locationPermissionTitle": "Location permission required",
+  "locationPermissionMessage": "The app needs location data to show nearby food. Please allow location access in settings.",
+  "openSettings": "Open Settings",
+  
+  "locationError": "Could not get location. Showing Helsinki city center.",
+  
+  "available": "Available",
+  "reserved": "Reserved",
+  "pickedUp": "Picked Up",
+  
+  "vegetables": "Vegetables",
+  "fruits": "Fruits",
+  "bread": "Bread",
+  "dairy": "Dairy",
+  "meat": "Meat",
+  "fish": "Fish",
+  "prepared": "Prepared Food",
+  "other": "Other",
+  
+  "vegan": "Vegan",
+  "vegetarian": "Vegetarian",
+  "glutenFree": "Gluten Free",
+  "lactoseFree": "Lactose Free",
+  "nutFree": "Nut Free",
+  
+  "freePrice": "Free",
+  "paidPrice": "Paid",
+  "lowPrice": "Low Price",
+  "negotiable": "Negotiable",
+  
+  "reserveFood": "Reserve Food",
+  "reserve": "Reserve",
+  "cancelReservation": "Cancel Reservation",
+  "cancelReservationMessage": "Are you sure you want to cancel the reservation?",
+  "no": "No",
+  "yes": "Yes",
+  "yesCancelReservation": "Yes, cancel",
+  "markAsPickedUp": "Mark as Picked Up",
+  "markAsPickedUpMessage": "Has the food been picked up successfully?",
+  "yesPickedUp": "Yes, picked up",
+  "deleteListing": "Delete Listing",
+  "deleteListingMessage": "Are you sure you want to delete this listing?",
+  "deleteListingButton": "DELETE LISTING",
+  "cancelButton": "CANCEL",
+  "pickedUpButton": "PICKED UP",
+  "eventEnded": "EVENT ENDED",
+  
+  "addNewListing": "Add New Listing",
+  "editListing": "Edit Listing",
+  "saveChanges": "Save Changes",
+  "noNewNotifications": "No new notifications",
+  "fetchingLocation": "Fetching location...",
+  "loginToReserve": "Log in to reserve",
+  "cannotReserveOwn": "You cannot reserve your own listing!",
+  "foodReserved": "Food reserved!",
+  "reservationCancelled": "Reservation cancelled",
+  "markedAsPickedUpSuccess": "Marked as picked up!",
+  "loginToChat": "Log in to use chat",
+  "profileUpdated": "Profile updated!",
+  "errorUpdatingProfile": "Error updating profile: {error}",
+  "@errorUpdatingProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "invalidPrice": "Invalid price. Use e.g. 5.00",
+  "maxImagesError": "You can add up to 5 images",
+  "selectImageError": "Please select at least one image before sharing",
+  "messageSendError": "Failed to send message: {error}",
+  "@messageSendError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "unitKg": "kg",
+  "unitPcs": "pcs",
+  "unitL": "l",
+  
+  "takePhoto": "Take Photo",
+  "chooseFromGallery": "Choose from Gallery",
+  
+  "retryButton": "Retry",
+  
+  "skipIntro": "Skip Intro",
+  "acceptAndContinue": "Accept and Continue",
+  
+  "next": "Next",
+  "getStarted": "Get Started",
+  "writeMessage": "Type a message...",
+  "unknown": "Unknown",
+  "noMessagesYet": "No messages yet",
+  "startConversation": "Start a conversation!",
+  "yesterday": "Yesterday",
+  "loading": "Loading...",
+  
+  "signUp": "Sign Up",
+  "createAccount": "Create New Account",
+  "signIn": "Sign In",
+  "phoneNumber": "Phone Number",
+  "name": "Name",
+  "password": "Password",
+  "checkPhoneNumber": "Check phone number",
+  "enterName": "Enter name",
+  "passwordLength": "At least 6 characters",
+  "haveAccount": "Already have an account? Login",
+  "noAccount": "Don't have an account? Sign Up",
+  "appSlogan": "Sharing food with neighbors",
+
+  "categoryBakedGoods": "Baked Goods",
+  "categoryFruits": "Fruits",
+  "categoryVegetables": "Vegetables",
+  "categoryOther": "Other",
+  "categoryAll": "All",
+  
+  "dietVegan": "Vegan",
+  "dietGlutenFree": "Gluten Free",
+  "dietLactoseFree": "Lactose Free",
+  "dietMilkFree": "Dairy Free",
+  "dietNutFree": "Nut Free",
+  "dietDomestic": "Domestic",
+  "dietLocal": "Local Food",
+  
+  "newBadge": "NEW",
+  "dayShort": "d",
+  "hourShort": "h",
+  "noDescription": "No description",
+  "noLimit": "No limit",
+  "showResults": "Show Results",
+  "clear": "Clear",
+  "specialDiets": "Dietary",
+  "free": "Free",
+  "distanceUnitKm": "km",
+  "distanceUnitM": "m",
+  
+  "errorGenericWithDetails": "Error: {error}",
+  "@errorGenericWithDetails": {
+      "placeholders": {
+          "error": {
+              "type": "Object"
+          }
+      }
+  },
+  "errorNetwork": "No internet connection. Check your connection.",
+  "errorPermission": "Permission error. Contact support.",
+  "errorTimeout": "Operation took too long. Try again.",
+  "errorNotFound": "Data not found.",
+  "errorUnavailable": "Service unavailable. Try again later.",
+  "errorGeneric": "Something went wrong. Try again.",
+  
+  "filter": "Filter",
+  "filterCategory": "Category",
+  "filterDistance": "Distance",
+  "filterDiets": "Dietary Restrictions",
+  "close": "Close",
+  "privacyPolicyTitle": "Privacy Policy",
+  "privacyPolicyDate": "Updated: 19.1.2026",
+  "privacyPolicySection1Title": "1. Controller",
+  "privacyPolicySection1Content": "The administrator of this service and register is the developer.\n\nEmail: nasratollah.rezai@gmail.com (Hereinafter \"We\" or \"Service Provider\").",
+  "privacyPolicySection2Title": "2. What information do we collect?",
+  "privacyPolicySection2Content": "To ensure Naapurisapuska works as intended, we collect the following information:\n\nA. Information provided by the user\n\nAccount information: Email address, username, and profile picture (upon registration).\n\nUser-generated content: Images of food you upload, descriptions, and chat messages sent to other users to arrange pickups.\n\nB. Automatically collected information\n\nLocation data: We collect your precise location (GPS) only when you use the app to show nearby food listings on the map. We do not track your location in the background when the app is closed.\n\nDevice information: Information about phone model and operating system for bug fixing.",
+  "privacyPolicySection3Title": "3. How do we use your information?",
+  "privacyPolicySection3Content": "We use collected information only for:\n\nService provision: To show food listings on the map and allow contact with other users.\n\nSecurity: Protecting user accounts and preventing misuse.\n\nCommunication: To notify you (e.g., Push notifications) when someone is interested in your listing.\n\nAI: We use on-device AI (Machine Learning) to recognize food categories from images to speed up listing creation.",
+  "privacyPolicySection4Title": "4. Sharing information with third parties",
+  "privacyPolicySection4Content": "We do not sell, rent, or share your data with advertisers (\"No Tracking\"). We only share data with trusted partners required for technical implementation:\n\nGoogle Firebase: Used as database, authentication, and image storage. Data is stored on Google's secure servers (mainly in EU or per Privacy Shield).\n\nMap Services (Google Maps / Mapbox): Location data is processed to draw the map and show distances. These services do not permanently store individual user movement history.",
+  "privacyPolicySection5Title": "5. User Rights (GDPR)",
+  "privacyPolicySection5Content": "Under EU GDPR you have the right to:\n\nInspect: What data is stored about you.\n\nCorrect: Request correction of incorrect data.\n\nDelete (\"Right to be forgotten\"): You can delete your account and all related data at any time from app settings (\"Delete Account\" button) or by contacting us via email. When an account is deleted, chat history and images are permanently removed.",
+  "privacyPolicySection6Title": "6. Data Retention",
+  "privacyPolicySection6Content": "We retain your data as long as your account is active. If you delete your account, data is removed from backups within a reasonable time (usually 30 days).",
+  "privacyPolicySection7Title": "7. Children's Privacy",
+  "privacyPolicySection7Content": "The service is not directed at children under 13. We do not knowingly collect information from children under 13.",
+  "privacyPolicySection8Title": "8. Changes",
+  "privacyPolicySection8Content": "We reserve the right to update this privacy policy. Significant changes will be notified within the application.",
+  "termsOfUseTitle": "Terms of Use",
+  "termsOfUseDate": "Last updated: 19.1.2026",
+  "termsOfUseSection1Title": "1. General",
+  "termsOfUseSection1Content": "Welcome to the Naapurisapuska app (\"Service\"). These terms govern the use of the Service. By downloading the app, registering, or using the Service, you agree to these terms.\n\nThe Service Provider (\"We\") maintains a platform that allows individuals to list and share surplus food with other users. We are not a food seller, manufacturer, or distributor. We act only as a technical intermediary.",
+  "termsOfUseSection2Title": "2. Nature of Service and Limitation of Liability (IMPORTANT!)",
+  "termsOfUseSection2Content": "Naapurisapuska is a peer-to-peer sharing platform.\n\nFood Safety: The Service Provider does not check, monitor, or guarantee the quality, safety, hygiene, or edibility of food listed in the Service.\n\nUser Responsibility:\n\nGiver: You are responsible for ensuring that the food you give away is edible, properly stored, and that product descriptions/allergens are disclosed where possible.\n\nReceiver: You pick up and consume the food entirely at your own risk. You must evaluate the sensory quality of the food (smell, appearance) before consuming it.\n\nRelease from Liability: Naapurisapuska and its developers are not liable for any health issues, illnesses, or damages caused by food shared via the Service.",
+  "termsOfUseSection3Title": "3. User Account and Registration",
+  "termsOfUseSection3Content": "You must be at least 13 years old to use the Service.\n\nYou are responsible for the security of your password and account.\n\nYou agree to provide truthful information about yourself. Creating fake profiles is prohibited.",
+  "termsOfUseSection4Title": "4. Rules of Conduct",
+  "termsOfUseSection4Content": "As a user, you agree to follow these rules:\n\nRespect: Treat other users appropriately in chat and pickup situations. Harassment is strictly prohibited.\n\nReliability: If you agree to a pickup (reserve food), you commit to showing up at the agreed time. Repeated \"no-shows\" may lead to account suspension.\n\nLegality: You may not share alcohol, tobacco products, medicines, or illegal substances in the Service.\n\nNo Sales: The Service is primarily intended for sharing food for free or for a nominal fee to reduce waste, not for professional business without permission.",
+  "termsOfUseSection5Title": "5. Content and Rights",
+  "termsOfUseSection5Content": "By uploading an image of food to the Service, you warrant that you have the right to the image.\n\nYou grant Naapurisapuska the right to use, modify, and display the content you upload (e.g., food images) within the scope of Service operation and marketing.\n\nWe do not allow 18+ material or inappropriate content in images.",
+  "termsOfUseSection6Title": "6. Service Availability and Changes",
+  "termsOfUseSection6Content": "We strive to keep the Service operational 24/7, but we do not guarantee uninterrupted service. We have the right to change, suspend, or terminate the Service or part of it at any time without separate notice (e.g., maintenance breaks or technical updates).",
+  "termsOfUseSection7Title": "7. Termination",
+  "termsOfUseSection7Content": "We have the right to close your account and prevent access to the Service immediately if:\n\nYou violate these terms.\n\nYour behavior is threatening or disturbing to others.\n\nYou repeatedly share spoiled food or fail to pick up reservations.",
+  "termsOfUseSection8Title": "8. Applicable Law",
+  "termsOfUseSection8Content": "These terms are governed by Finnish law. Any disputes will ideally be resolved through negotiation.",
+  
+  "myListings": "My Listings",
+  "myReservations": "My Reservations",
+  "favorites": "Favorites",
+  "noListings": "You haven't added any listings.",
+  "noReservations": "You haven't reserved anything.",
+  "noFavorites": "No favorites.",
+  "loginToViewProfile": "Log in to view profile",
+  "anonymous": "Anonymous",
+  "beginner": "Beginner",
+  "sharedPortions": "{count} shared portions",
+  "@sharedPortions": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "maxLevelReached": "Max level reached! 🎉",
+  "progressToNextLevel": "Progress to next level",
+  "statShared": "Shared",
+  "statRating": "Rating",
+  "statReviews": "Reviews",
+  "notYet": "Not yet",
+
+  "onboardingPage1Title": "Save money by saving food",
+  "onboardingPage1Description": "Buy delicious food from neighbors and stores at a heavily discounted price.",
+  "onboardingPage2Title": "Say goodbye to food waste",
+  "onboardingPage2Description": "Find deals near you! Easily browse daily changing listings.",
+  "onboardingPage3Title": "Pick up and enjoy",
+  "onboardingPage3Description": "Reserve food in the app, pick it up as agreed, and enjoy good food.",
+  "welcomeToApp": "Welcome to NaapuriSapuska!",
+  "onboardingTermsMessage": "Before you continue, please review your privacy settings and terms of use.",
+  "onboardingAcceptMessage": "By using the service, you accept:",
+  "locationUsageForNotifications": "Use of location for showing notifications",
+  
+  "newNotificationsTooltip": "New notifications",
+  "nearbyFood": "Nearby food",
+  
+  "distanceAway": "away",
+  "seeMore": "See more:",
+  "confirmReservation": "Do you really want to reserve this food?\n\nThis will open a chat with the poster.",
+  "anonymousUser": "Anonymous user",
+  "newUser": "New user",
+  
+  "listingUpdatedSuccess": "Listing updated successfully!",
+  "whatFood": "What food?",
+  "foodPlaceholder": "E.g., Bread, fruits, vegetables...",
+  "additionalInfo": "Additional info",
+  "additionalInfoPlaceholder": "Quantity, date, special instructions...",
+  
+  "quantity": "Quantity",
+  "unit": "Unit",
+  
+  "errorLoadingMessages": "Error loading messages",
+  
+  "foodInfoHeader": "About the food",
+  "locationHeader": "Location",
+  "posterLabel": "Poster",
+  "freeLabel": "Free",
+  "categoryLabel": "Category",
+  "priceLabel": "Price",
+  "imagesLabel": "Images",
+  "selectImageLabel": "Select image",
+  "shareListingButton": "Share listing",
+  
+  "daysAgo": "{count} days ago",
+  "@daysAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hoursAgoShort": "{count}h ago",
+  "@hoursAgoShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "minutesAgoShort": "{count}min ago",
+  "@minutesAgoShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "justNow": "Just now",
+  
+  "reserveFoodButton": "RESERVE FOOD",
+  "reservedForYou": "RESERVED FOR YOU",
+  
+  "userLevelBeginner": "Beginner",
+  "userLevelActive": "Active",
+  "userLevelVeteran": "Veteran",
+  
+  "noResults": "No results",
+  "noFoodNearby": "No food nearby",
+  "beFirstToShare": "Be the first to share\nfood with neighbors!",
+  "tryExpandDistance": "Try expanding the distance or\nchange the category",
+  "editFilters": "Edit filters",
+  "shareFood": "Share food",
+  "newListingBanner": "NEW LISTING",
+  "nearbyYou": "Near You",
+  "listingCount": "{count, plural, =0{No listings} =1{1 listing} other{{count} listings}}",
+  "@listingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

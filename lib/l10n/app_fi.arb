@@ -1,0 +1,348 @@
+{
+  "@@locale": "fi",
+  
+  "appTitle": "Naapurisapuska",
+  "@appTitle": {
+    "description": "Application title"
+  },
+  
+  "home": "Koti",
+  "settings": "Asetukset",
+  "profile": "Profiili",
+  "myProfile": "Oma Profiili",
+  "login": "Kirjaudu",
+  "logout": "Kirjaudu ulos",
+  
+  "searchHint": "Mitä tekisi mieli...",
+  "filter": "Suodata",
+  "notifications": "Uudet ilmoitukset",
+  "messages": "Viestit",
+  "shareFood": "Jaa ruoka",
+  
+  "appearance": "Ulkoasu",
+  "darkMode": "Tumma tila",
+  "darkModeDescription": "Käytä tummaa teemaa sovelluksessa",
+  
+  "themeMode": "Teema",
+  "themeModeSystem": "Järjestelmä",
+  "themeModeLight": "Vaalea",
+  "themeModeDark": "Tumma",
+  
+  "language": "Kieli",
+  "languageSystem": "Järjestelmä",
+  "languageFinnish": "Suomi",
+  "languageEnglish": "English",
+  
+  "about": "Tietoja",
+  "version": "Versio",
+  "termsOfUse": "Käyttöehdot",
+  "privacyPolicy": "Tietosuoja",
+  "privacyPolicyTitle": "Tietosuojaseloste",
+  "deleteAccount": "Poista tili",
+  "close": "Sulje",
+  
+  "deleteAccountTitle": "Poista tili?",
+  "deleteAccountMessage": "Tämä toiminto poistaa tilisi ja kaikki ilmoituksesi pysyvästi. Tätä ei voi perua.",
+  "cancel": "Peruuta",
+  "delete": "Poista tili",
+  "deleteAccountError": "Virhe tilin poistossa. Kirjaudu uudelleen ja yritä heti.",
+  
+  "locationPermissionTitle": "Sijaintilupa tarvitaan",
+  "locationPermissionMessage": "Sovellus tarvitsee sijaintitiedot näyttääkseen lähellä olevaa ruokaa. Salli sijainti asetuksista.",
+  "openSettings": "Avaa asetukset",
+  
+  "locationError": "Sijaintia ei voitu hakea. Näytetään Helsingin keskusta.",
+  
+  "available": "Saatavilla",
+  "reserved": "Varattu",
+  "pickedUp": "Noudettu",
+  
+  "vegetables": "Vihannekset",
+  "fruits": "Hedelmät",
+  "bread": "Leipä",
+  "dairy": "Maitotuotteet",
+  "meat": "Liha",
+  "fish": "Kala",
+  "prepared": "Valmisruoka",
+  "other": "Muu",
+  
+  "vegan": "Vegaaninen",
+  "vegetarian": "Kasvisruoka",
+  "glutenFree": "Gluteeniton",
+  "lactoseFree": "Laktoositon",
+  "nutFree": "Pähkinätön",
+  
+  "freePrice": "Ilmainen",
+  "paidPrice": "Maksullinen",
+  "lowPrice": "Halpa",
+  "negotiable": "Neuvoteltavissa",
+  
+  "reserveFood": "Varaa ruoka",
+  "reserve": "Varaa",
+  "cancelReservation": "Peruuta varaus",
+  "cancelReservationMessage": "Haluatko varmasti peruuttaa varauksen?",
+  "no": "Ei",
+  "yes": "Kyllä",
+  "yesCancelReservation": "Kyllä, peruuta",
+  "markAsPickedUp": "Merkitse noudetuksi",
+  "markAsPickedUpMessage": "Onko ruoka noudettu onnistuneesti?",
+  "yesPickedUp": "Kyllä, noudettu",
+  "deleteListing": "Poista ilmoitus",
+  "deleteListingMessage": "Haluatko varmasti poistaa tämän ilmoituksen?",
+  "deleteListingButton": "POISTA ILMOITUS",
+  "cancelButton": "PERUUTA",
+  "pickedUpButton": "NOUDETTU",
+  "eventEnded": "TAPAHTUMA PÄÄTTYNYT",
+  
+  "addNewListing": "Lisää uusi ilmoitus",
+  "editListing": "Muokkaa ilmoitusta",
+  "saveChanges": "Tallenna muutokset",
+
+  "noNewNotifications": "Ei uusia ilmoituksia",
+  "fetchingLocation": "Haetaan sijaintia...",
+  "loginToReserve": "Kirjaudu sisään varataksesi",
+  "cannotReserveOwn": "Et voi varata omaa ilmoitustasi!",
+  "foodReserved": "Ruoka varattu!",
+  "reservationCancelled": "Varaus peruutettu",
+  "markedAsPickedUpSuccess": "Merkitty noudetuksi!",
+  "loginToChat": "Kirjaudu sisään käyttääksesi chattia",
+  "profileUpdated": "Profiili päivitetty!",
+  "errorUpdatingProfile": "Virhe päivityksessä: {error}",
+  "@errorUpdatingProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "invalidPrice": "Virheellinen hinta. Käytä esim. 5.00 tai 5,00",
+  "maxImagesError": "Voit lisätä enintään 5 kuvaa",
+  "selectImageError": "Valitse vähintään yksi kuva ennen ilmoituksen jakamista",
+  "messageSendError": "Viestin lähetys epäonnistui: {error}",
+  "@messageSendError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "unitKg": "kg",
+  "unitPcs": "kpl",
+  "unitL": "litra",
+  "takePhoto": "Ota kuva",
+  "chooseFromGallery": "Valitse galleriasta",
+  
+  "retryButton": "Yritä uudelleen",
+  
+  "skipIntro": "Ohita esittely",
+  "acceptAndContinue": "Hyväksy ja jatka",
+  
+  "next": "Seuraava",
+  "getStarted": "Aloita käyttö",
+  "writeMessage": "Kirjoita viesti...",
+  "unknown": "Tuntematon",
+  "noMessagesYet": "Ei viestejä vielä",
+  "startConversation": "Aloita keskustelu!",
+  "yesterday": "Eilen",
+  "loading": "Ladataan...",
+  
+  "signUp": "Rekisteröidy",
+  "createAccount": "Luo uusi tili",
+  "signIn": "Kirjaudu sisään",
+  "phoneNumber": "Puhelinnumero",
+  "name": "Nimi",
+  "password": "Salasana",
+  "checkPhoneNumber": "Tarkista numero",
+  "enterName": "Syötä nimi",
+  "passwordLength": "Vähintään 6 merkkiä",
+  "haveAccount": "Onko sinulla jo tili? Kirjaudu",
+  "noAccount": "Eikö sinulla ole tiliä? Rekisteröidy",
+  "appSlogan": "Jakamassa ruokaa naapureille",
+
+  "categoryBakedGoods": "Leivonnaiset",
+  "categoryFruits": "Hedelmät",
+  "categoryVegetables": "Vihannekset",
+  "categoryOther": "Muut",
+  "categoryAll": "Kaikki",
+  
+  "dietVegan": "Vegaaninen",
+  "dietGlutenFree": "Gluteeniton",
+  "dietLactoseFree": "Laktoositon",
+  "dietMilkFree": "Maidoton",
+  "dietNutFree": "Pähkinätön",
+  "dietDomestic": "Kotimainen",
+  "dietLocal": "Lähiruoka",
+  
+  "newBadge": "UUSI",
+  "dayShort": "pv",
+  "hourShort": "h",
+  "noDescription": "Ei kuvausta",
+  "noLimit": "Ei rajoitusta",
+  "showResults": "Näytä tulokset",
+  "clear": "Tyhjennä",
+  "specialDiets": "Erityisruokavaliot",
+  "free": "Ilmainen",
+  "distanceUnitKm": "km",
+  "distanceUnitM": "m",
+  
+  "errorGenericWithDetails": "Virhe: {error}",
+  "errorNetwork": "Ei internetyhteyttä. Tarkista verkkoyhteys.",
+  "errorPermission": "Käyttöoikeusvirhe. Ota yhteys tukeen.",
+  "errorTimeout": "Toiminto kesti liian kauan. Yritä uudelleen.",
+  "errorNotFound": "Tietoja ei löytynyt.",
+  "errorUnavailable": "Palvelu ei ole saatavilla. Yritä myöhemmin.",
+  "errorGeneric": "Jotain meni pieleen. Yritä uudelleen.",
+  
+  "filter": "Suodata",
+  "filterCategory": "Kategoria",
+  "filterDistance": "Etäisyys",
+  "filterDiets": "Erityisruokavaliot",
+  "close": "Sulje",
+  "privacyPolicyTitle": "Tietosuojaseloste",
+  "privacyPolicyDate": "Päivitetty: 19.1.2026",
+  "privacyPolicySection1Title": "1. Rekisterinpitäjä",
+  "privacyPolicySection1Content": "Tämän palvelun ja rekisterin ylläpitäjä on koodaaja itse.\n\nSähköposti: nasratollah.rezai@gmail.com (Myöhemmin tässä tekstissä \"Me\" tai \"Palveluntarjoaja\").",
+  "privacyPolicySection2Title": "2. Mitä tietoja keräämme?",
+  "privacyPolicySection2Content": "Jotta Naapurisapuska-sovellus toimisi tarkoitetulla tavalla, keräämme käyttäjistä seuraavia tietoja:\n\nA. Käyttäjän antamat tiedot\n\nTilitiedot: Sähköpostiosoite, nimimerkki ja profiilikuva (rekisteröitymisen yhteydessä).\n\nKäyttäjän luoma sisältö: Sovellukseen lataamasi kuvat ruoasta, ruoan kuvaustekstit sekä chat-viestit, joita lähetät muille käyttäjille noudon sopimiseksi.\n\nB. Automaattisesti kerättävät tiedot\n\nSijaintitiedot: Keräämme tarkan sijaintisi (GPS) vain silloin kun käytät sovellusta, jotta voimme näyttää sinulle lähellä olevat ruokailmoitukset kartalla. Emme seuraa sijaintiasi taustalla, kun sovellus on suljettu.\n\nLaitetiedot: Tieto puhelimen mallista ja käyttöjärjestelmästä virheiden korjaamista varten.",
+  "privacyPolicySection3Title": "3. Mihin käytämme tietojasi?",
+  "privacyPolicySection3Content": "Käytämme kerättyjä tietoja vain seuraaviin tarkoituksiin:\n\nPalvelun tarjoaminen: Jotta voit nähdä ruokailmoitukset kartalla ja ottaa yhteyttä muihin käyttäjiin.\n\nTietoturva: Käyttäjätilin suojaaminen ja väärinkäytösten estäminen.\n\nViestintä: Ilmoittaaksemme sinulle (esim. Push-ilmoituksella), kun joku on kiinnostunut ilmoittamastasi ruoasta.\n\nTekoäly (AI): Käytämme laitteessa toimivaa tekoälyä (Machine Learning) tunnistamaan kuvista ruoan kategorian (esim. hedelmä/leipä) ilmoituksen tekemisen nopeuttamiseksi.",
+  "privacyPolicySection4Title": "4. Tietojen jakaminen kolmansille osapuolille",
+  "privacyPolicySection4Content": "Emme myy, vuokraa tai jaa tietojasi mainostajille (\"No Tracking\"). Jaamme tietoja vain palvelun teknisen toteutuksen vaatimille luotettaville kumppaneille:\n\nGoogle Firebase: Käytämme Firebasea tietokantana, käyttäjien tunnistautumiseen (Authentication) ja kuvien tallennukseen. Tietoja säilytetään Googlen turvallisilla palvelimilla (pääosin EU-alueella tai Privacy Shield -sopimusten mukaisesti).\n\nKarttapalvelut (Google Maps / Mapbox): Sijaintitietojasi käsitellään, jotta voimme piirtää kartan ja näyttää etäisyydet. Nämä palvelut eivät tallenna yksittäisen käyttäjän liikehistoriaa pysyvästi.",
+  "privacyPolicySection5Title": "5. Käyttäjän oikeudet (GDPR)",
+  "privacyPolicySection5Content": "Sinulla on Euroopan unionin tietosuoja-asetuksen nojalla oikeus:\n\nTarkastaa: Mitä tietoja sinusta on tallennettu.\n\nOikaista: Pyytää virheellisen tiedon korjaamista.\n\nPoistaa (\"Oikeus tulla unohdetuksi\"): Voit milloin tahansa poistaa käyttäjätilisi ja kaikki siihen liittyvät tiedot suoraan sovelluksen asetuksista (\"Poista tili\" -painike) tai ottamalla meihin yhteyttä sähköpostitse. Kun tili poistetaan, myös chat-historia ja kuvat poistuvat järjestelmästä pysyvästi.",
+  "privacyPolicySection6Title": "6. Tietojen säilytys",
+  "privacyPolicySection6Content": "Säilytämme tietojasi niin kauan kuin käyttäjätilisi on aktiivinen. Jos poistat tilisi, tiedot poistetaan kohtuullisen ajan kuluessa (yleensä 30 päivän sisällä) varmuuskopioista.",
+  "privacyPolicySection7Title": "7. Lasten yksityisyys",
+  "privacyPolicySection7Content": "Palvelu ei ole suunnattu alle 13-vuotiaille lapsille. Emme tietoisesti kerää tietoja alle 13-vuotiailta.",
+  "privacyPolicySection8Title": "8. Muutokset",
+  "privacyPolicySection8Content": "Pidätämme oikeuden päivittää tätä tietosuojaselostetta. Merkittävistä muutoksista ilmoitetaan sovelluksessa.",
+  "termsOfUseTitle": "Käyttöehdot",
+  "termsOfUseDate": "Viimeksi päivitetty: 19.1.2026",
+  "termsOfUseSection1Title": "1. Yleistä",
+  "termsOfUseSection1Content": "Tervetuloa käyttämään Naapurisapuska-sovellusta (\"Palvelu\"). Nämä käyttöehdot säätelevät Palvelun käyttöä. Lataamalla sovelluksen, rekisteröitymällä tai käyttämällä Palvelua hyväksyt nämä ehdot sitovasti.\n\nPalvelun tarjoaja (\"Me\") ylläpitää alustaa, jonka avulla yksityishenkilöt voivat ilmoittaa ja jakaa ylijäämäruokaa muille käyttäjille. Me emme ole ruoan myyjä, valmistaja emmekä jakelija. Toimimme vain teknisenä välittäjänä.",
+  "termsOfUseSection2Title": "2. Palvelun luonne ja vastuunrajoitus (TÄRKEÄ!)",
+  "termsOfUseSection2Content": "Naapurisapuska on alusta vertaisjakamiselle (peer-to-peer).\n\nRuokaturvallisuus: Palveluntarjoaja ei tarkista, valvo tai takaa Palvelussa ilmoitetun ruoan laatua, turvallisuutta, hygieniaa tai syömäkelpoisuutta.\n\nKäyttäjän vastuu:\n\nLuovuttaja: Vastaat siitä, että luovuttamasi ruoka on syömäkelpoista, oikein säilytettyä ja että tuoteselosteet/allergeenit on mahdollisuuksien mukaan kerrottu.\n\nVastaanottaja: Noudat ja nautit ruoan täysin omalla vastuullasi. Sinun tulee arvioida ruoan aistinvarainen laatu (haju, ulkonäkö) ennen sen nauttimista.\n\nVapautus vastuusta: Naapurisapuska ja sen kehittäjät eivät ole vastuussa mistään terveyshaitoista, sairauksista tai vahingoista, jotka aiheutuvat Palvelun kautta jaetusta ruoasta.",
+  "termsOfUseSection3Title": "3. Käyttäjätili ja rekisteröityminen",
+  "termsOfUseSection3Content": "Sinun tulee olla vähintään 13-vuotias käyttääksesi palvelua.\n\nOlet vastuussa salasanasi ja tilisi turvallisuudesta.\n\nSitoudut antamaan itsestäsi totuudenmukaiset tiedot. Valeprofiilien luominen on kiellettyä.",
+  "termsOfUseSection4Title": "4. Käyttäytymissäännöt",
+  "termsOfUseSection4Content": "Käyttäjänä sitoudut noudattamaan seuraavia sääntöjä:\n\nKunnioitus: Kohtele muita käyttäjiä asiallisesti chatissa ja noutotilanteissa. Häirintä on ehdottomasti kielletty.\n\nLuotettavuus: Jos sovit noudosta (varaat ruoan), sitoudut saapumaan paikalle sovittuna aikana. Toistuvat \"oharit\" (no-show) voivat johtaa tilin sulkemiseen.\n\nLaillisuus: Palvelussa ei saa jakaa alkoholia, tupakkatuotteita, lääkkeitä tai laittomia aineita.\n\nEi myyntiä: Palvelu on tarkoitettu ensisijaisesti ruoan jakamiseen ilmaiseksi tai nimellistä korvausta vastaan hävikin vähentämiseksi, ei ammattimaiseen liiketoimintaan ilman lupaa.",
+  "termsOfUseSection5Title": "5. Sisältö ja oikeudet",
+  "termsOfUseSection5Content": "Lataamalla kuvan ruoasta palveluun vakuutat, että sinulla on oikeus kuvaan.\n\nAnnat Naapurisapuskalle oikeuden käyttää, muokata ja esittää lataamaasi sisältöä (esim. ruokakuvat) Palvelun toiminnan puitteissa ja markkinoinnissa.\n\nEmme salli K-18 materiaalia tai sopimatonta sisältöä kuvissa.",
+  "termsOfUseSection6Title": "6. Palvelun saatavuus ja muutokset",
+  "termsOfUseSection6Content": "Pyrimme pitämään Palvelun toiminnassa 24/7, mutta emme takaa sen keskeytyksettömyyttä. Meillä on oikeus muuttaa, keskeyttää tai lopettaa Palvelu tai sen osa milloin tahansa ilman erillistä ilmoitusta (esim. huoltokatkot tai tekniset päivitykset).",
+  "termsOfUseSection7Title": "7. Sopimuksen päättäminen",
+  "termsOfUseSection7Content": "Meillä on oikeus sulkea käyttäjätilisi ja estää pääsy Palveluun välittömästi, jos:\n\nRikot näitä käyttöehtoja.\n\nKäytöksesi on uhkaavaa tai häiritsevää muita kohtaan.\n\nJatkuvasti jaat pilaantunutta ruokaa tai jätät noutamatta varauksia.",
+  "termsOfUseSection8Title": "8. Sovellettava laki",
+  "termsOfUseSection8Content": "Näihin ehtoihin sovelletaan Suomen lakia. Mahdolliset riitaisuudet pyritään ensisijaisesti ratkaisemaan neuvottelemalla.",
+  
+  "myListings": "Omat ilmoitukset",
+  "myReservations": "Omat varaukset",
+  "favorites": "Suosikit",
+  "noListings": "Et ole lisännyt ilmoituksia.",
+  "noReservations": "Et ole varannut mitään.",
+  "noFavorites": "Ei suosikkeja.",
+  "loginToViewProfile": "Kirjaudu sisään nähdäksesi profiilin",
+  "anonymous": "Nimetön",
+  "beginner": "Aloittelija",
+  "sharedPortions": "{count} jaettua annosta",
+  "@sharedPortions": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "maxLevelReached": "Maksimitaso saavutettu! 🎉",
+  "progressToNextLevel": "Edistyminen seuraavaan tasoon",
+  "statShared": "Jaettu",
+  "statRating": "Arvostelu",
+  "statReviews": "Arvioita",
+  "notYet": "Ei vielä",
+
+  "onboardingPage1Title": "Säästä rahaa pelastamalla",
+  "onboardingPage1Description": "Osta herkullista ruokaa naapureilta ja kaupoilta reilusti alennettuun hintaan.",
+  "onboardingPage2Title": "Heitä hyvästit hävikille",
+  "onboardingPage2Description": "Löydä tarjouksia läheltäsi! Selaa helposti päivittäin vaihtuvia ilmoituksia.",
+  "onboardingPage3Title": "Nouda ja nauti",
+  "onboardingPage3Description": "Varaa ruoka sovelluksessa, nouda se sovitusti ja nauti hyvästä ruoasta.",
+  "welcomeToApp": "Tervetuloa NaapuriSapuskaan!",
+  "onboardingTermsMessage": "Ennen kuin jatkat, tarkista tietosuoja-asetuksesi ja käyttöehdot.",
+  "onboardingAcceptMessage": "Käyttämällä palvelua hyväksyt:",
+  "locationUsageForNotifications": "Sijainnin käytön ilmoitusten näyttämiseen",
+  
+  "newNotificationsTooltip": "Uudet ilmoitukset",
+  "nearbyFood": "Lähellä olevat ruoat",
+  
+  "distanceAway": "päästä",
+  "seeMore": "Katso lisää:",
+  "confirmReservation": "Haluatko varmasti varata tämän ruoan?\n\nTämä avaa chatin ilmoittajan kanssa.",
+  "anonymousUser": "Nimetön käyttäjä",
+  "newUser": "Uusi käyttäjä",
+  
+  "listingUpdatedSuccess": "Ilmoitus päivitetty onnistuneesti!",
+  "whatFood": "Mitä ruokaa?",
+  "foodPlaceholder": "Esim. Leipää, hedelmiä, vihanneksia...",
+  "additionalInfo": "Lisätiedot",
+  "additionalInfoPlaceholder": "Määrä, päiväys, erityisohjeet...",
+  
+  "quantity": "Määrä",
+  "unit": "Yksikkö",
+  
+  "errorLoadingMessages": "Virhe viestien lataamisessa",
+  
+  "foodInfoHeader": "Tietoa ruoasta",
+  "locationHeader": "Sijainti",
+  "posterLabel": "Ilmoittaja",
+  "freeLabel": "Ilmainen",
+  "categoryLabel": "Kategoria",
+  "priceLabel": "Hinta",
+  "imagesLabel": "Kuvat",
+  "selectImageLabel": "Valitse kuva",
+  "shareListingButton": "Jaa ilmoitus",
+  
+  "daysAgo": "{count} päivää sitten",
+  "@daysAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hoursAgoShort": "{count}h sitten",
+  "@hoursAgoShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "minutesAgoShort": "{count}min sitten",
+  "@minutesAgoShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "justNow": "Juuri nyt",
+  
+  "reserveFoodButton": "VARAA RUOKA",
+  "reservedForYou": "VARATTU SINULLE",
+  
+  "userLevelBeginner": "Aloittelija",
+  "userLevelActive": "Aktiivinen",
+  "userLevelVeteran": "Veteraani",
+  
+  "noResults": "Ei tuloksia",
+  "noFoodNearby": "Ei ruokaa lähistöllä",
+  "beFirstToShare": "Ole ensimmäinen jakamassa\nruokaa naapureille!",
+  "tryExpandDistance": "Kokeile laajentaa etäisyyttä tai\nvaihda kategoriaa",
+  "editFilters": "Muokkaa suodattimia",
+  "shareFood": "Jaa ruokaa",
+  "newListingBanner": "UUSI ILMOITUS",
+  "nearbyYou": "Lähellä sinua",
+  "listingCount": "{count, plural, =0{Ei ilmoituksia} =1{1 ilmoitus} other{{count} ilmoitusta}}",
+  "@listingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

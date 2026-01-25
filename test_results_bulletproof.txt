@@ -1,0 +1,56 @@
+00:00 +0: loading C:/naapurisapuska/test/widget/widgets/food_card_test.dart
+00:00 +0: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: (setUpAll)
+00:00 +0: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +2: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +3: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +3 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +3 -1: C:/naapurisapuska/test/unit/services/expiration_service_test.dart: ExpirationService - getExpirationText returns correct text for 1 day remaining [E]
+  Expected: 'Vanhenee huomenna'
+    Actual: 'Vanhenee 23 tunnin kuluttua'
+     Which: is different.
+            Expected: Vanhenee huomenna
+              Actual: Vanhenee 23 tunnin  ...
+                               ^
+             Differ at offset 9
+  
+  package:matcher                                       expect
+  package:flutter_test/src/widget_tester.dart 473:18    expect
+  test\unit\services\expiration_service_test.dart 55:7  main.<fn>.<fn>
+  
+00:00 +4 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +5 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +6 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +7 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +8 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +9 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +10 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +11 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +12 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +13 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:00 +14 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item title
+00:01 +15 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays food item description
+00:01 +16 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays price when item has price
+00:01 +17 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +18 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +19 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +20 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +21 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +22 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +23 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays "Ilmainen" when price is null
+00:01 +24 -1: C:/naapurisapuska/test/unit/models/food_item_test.dart: FoodItem expiringSoon Logic item expiring in 12 hours is expiring soon
+00:01 +25 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:01 +26 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:01 +27 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:01 +28 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:01 +29 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:01 +30 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:01 +31 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:01 +32 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:01 +33 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows expiration badge when expiring soon
+00:01 +34 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests shows NEW badge for recent items
+00:01 +35 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests calls onTap when card is tapped
+00:01 +36 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests favorite icon toggles state
+00:01 +37 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: FoodCard Widget Tests displays category badge
+00:01 +38 -1: C:/naapurisapuska/test/widget/widgets/food_card_test.dart: (tearDownAll)
+00:01 +38 -1: Some tests failed.
