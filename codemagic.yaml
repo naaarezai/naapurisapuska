@@ -1,0 +1,60 @@
+workflows:
+  ios-workflow:
+    name: iOS Production Build
+    max_build_duration: 120
+    instance_type: mac_mini_m1
+    environment:
+      # Create these groups in Codemagic UI: https://codemagic.io/app/settings
+      groups:
+        - app_store_credentials # Contains APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_IDENTIFIER, APP_STORE_CONNECT_PRIVATE_KEY
+        - ios_signing # Contains CERTIFICATE_PRIVATE_KEY (if manual) or just rely on automatic
+      vars:
+        XCODE_WORKSPACE: "ios/Runner.xcworkspace"
+        XCODE_SCHEME: "Runner"
+        # APP_STORE_ID: "1234567890" # Uncomment and replace with your App Apple ID if publishing automatically
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    triggering:
+      events:
+        - push
+        - tag
+        - pull_request
+      branch_patterns:
+        - pattern: 'main'
+          include: true
+          source: true
+    scripts:
+      - name: Set up keychain to be valid for codesigning using App Store Connect API key
+        script: |
+          keychain initialize
+          app-store-connect fetch-signing-files "$(gf xcode-project bundle-id ios/Runner.xcodeproj)" --type IOS_APP_STORE --create
+          keychain add-certificates
+      
+      - name: Set up code signing settings on Xcode project
+        script: |
+          xcode-project use-profiles
+
+      - name: Get Flutter packages
+        script: |
+          flutter packages pub get
+
+      - name: Install Pods
+        script: |
+          find . -name "Podfile" -exec dir "{}" \;
+          cd ios && pod install
+
+      - name: Flutter build ipa
+        script: |
+          flutter build ipa --release --export-options-plist=/Users/builder/export_options.plist
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - *.dSYM.zip
+    publishing:
+      app_store_connect:
+        auth: integration
+        # Configuration for automatic publishing to TestFlight
+        # submit_to_testflight: true
+        # beta_groups: # Specify the names of beta tester groups
+        #   - "QA"
