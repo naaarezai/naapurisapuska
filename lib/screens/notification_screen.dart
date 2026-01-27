@@ -32,7 +32,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   @override
   void initState() {
     super.initState();
-    _subscription = _databaseService.getFoodItemsStream().listen((items) {
+    _subscription = _databaseService.getRecentFoodItemsStream().listen((items) {
       if (mounted) setState(() => _allItems = items);
     });
   }

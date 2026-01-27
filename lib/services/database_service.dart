@@ -238,6 +238,23 @@ class DatabaseService {
     });
   }
 
+  /// Hakee vain viimeisen 24h aikana lisätyt ilmoitukset (kevyempi kysely)
+  Stream<List<FoodItem>> getRecentFoodItemsStream({int hours = 24}) {
+    final cutoff = DateTime.now().subtract(Duration(hours: hours));
+    final Timestamp timestamp = Timestamp.fromDate(cutoff);
+
+    return _firestore
+        .collection(_collectionFood)
+        .where('timestamp', isGreaterThanOrEqualTo: timestamp)
+        .orderBy('timestamp', descending: true)
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs
+          .map((doc) => FoodItem.fromMap(doc.data(), doc.id))
+          .toList();
+    });
+  }
+
   // ==================== PAGINATION METHODS ====================
 
   /// Get first batch of food items (paginated)
@@ -352,14 +369,14 @@ class DatabaseService {
 
       if (status == ReservationStatus.reserved) {
         data['reservedByUserId'] = reservedByUserId;
-        data['reservedAt'] = Timestamp.now();
+        data['reservedAt'] = FieldValue.serverTimestamp();
         data['pickedUpAt'] = null;
       } else if (status == ReservationStatus.available) {
         data['reservedByUserId'] = null;
         data['reservedAt'] = null;
         data['pickedUpAt'] = null;
       } else if (status == ReservationStatus.pickedUp) {
-        data['pickedUpAt'] = Timestamp.now();
+        data['pickedUpAt'] = FieldValue.serverTimestamp();
       }
 
       await _firestore.collection(_collectionFood).doc(itemId).update(data);

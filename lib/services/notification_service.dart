@@ -149,7 +149,8 @@ class NotificationService {
           'lng': position.longitude,
           'geohash': geohash,
         },
-        'geohash': geohash, // Lyhytversio suoraan juuressa queryjä varten
+        // Backend expecs 5-char geohash for exact match query
+        'geohash': geohash.length >= 5 ? geohash.substring(0, 5) : geohash,
         'lastActive': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true));
     } catch (e) {
@@ -192,7 +193,9 @@ class NotificationService {
           'lng': position.longitude,
           'geohash': geohash,
         };
-        updateData['geohash'] = geohash;
+        // Backend expecs 5-char geohash for exact match query
+        updateData['geohash'] =
+            geohash.length >= 5 ? geohash.substring(0, 5) : geohash;
       }
 
       await _firestore

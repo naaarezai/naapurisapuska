@@ -280,7 +280,7 @@ exports.cleanupOldFoodItems = functions.pubsub
 exports.testCleanupNow = functions.https.onRequest(async (req, res) => {
   // Simple security check
   const apiKey = req.query.key || req.headers['x-api-key'];
-  if (apiKey !== "napsu_secret_2024_0912") {
+  if (apiKey !== process.env.NAPSU_API_KEY) {
     console.warn("🔐 Luvaton pääsy testCleanupNow-funktioon!");
     return res.status(403).send("Forbidden: Invalid API Key");
   }
@@ -644,7 +644,7 @@ async function sendDeletionNotification(itemId, itemData) {
 exports.createTestData = functions.https.onRequest(async (req, res) => {
   // Simple security check
   const apiKey = req.query.key || req.headers['x-api-key'];
-  if (apiKey !== "napsu_secret_2024_0912") {
+  if (apiKey !== process.env.NAPSU_API_KEY) {
     console.warn("🔐 Luvaton pääsy createTestData-funktioon!");
     return res.status(403).send("Forbidden: Invalid API Key");
   }

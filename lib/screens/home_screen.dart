@@ -23,7 +23,7 @@ import '../models/user_model.dart';
 import '../widgets/filter_dialog.dart';
 import '../widgets/home_map_widget.dart';
 import '../widgets/home_bottom_sheet.dart';
-import '../widgets/home_list_widget.dart';
+import '../widgets/desktop_side_panel.dart'; // Add this
 import '../utils/error_helper.dart';
 import '../utils/map_marker_helper.dart';
 import '../utils/haptic_helper.dart';
@@ -330,11 +330,35 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       // Default location (Helsinki)
       const defaultLocation = LatLng(60.1699, 24.9384);
 
+      // FAST PATH: Check last known location first
       try {
+        final lastKnown = await Geolocator.getLastKnownPosition();
+        if (lastKnown != null && mounted) {
+          setState(() {
+            _userPosition = lastKnown;
+            _isLocationLoading = false;
+          });
+          _notificationService.updateUserLocation(lastKnown);
+          // Move map only if this is the first update (don't jump around on restart)
+          // But since this is startLocationTracking, moving is appropriate.
+          _mapController.move(
+            LatLng(lastKnown.latitude, lastKnown.longitude),
+            14.0,
+          );
+          _updateView();
+        }
+      } catch (e) {
+        debugPrint('Last known location error: $e');
+      }
+
+      // ROBUST PATH: Get fresh location if needed or update it
+      try {
+        // If we already have a position, we don't need to block UI,
+        // but we still want a fresh one.
         final initialPosition = await Geolocator.getCurrentPosition(
           locationSettings: const LocationSettings(
             accuracy: LocationAccuracy.medium,
-            timeLimit: Duration(seconds: 10),
+            timeLimit: Duration(seconds: 30), // Increased to 30s
           ),
         );
 
@@ -346,6 +370,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
           _notificationService.updateUserLocation(initialPosition);
 
+          // Only move map if we didn't have a position before (or to refine it)
           _mapController.move(
             LatLng(initialPosition.latitude, initialPosition.longitude),
             14.0,
@@ -360,14 +385,16 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             _isLocationLoading = false;
           });
 
-          _mapController.move(defaultLocation, 12.0);
-
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(AppLocalizations.of(context)!.locationError),
-              behavior: SnackBarBehavior.floating,
-            ),
-          );
+          // Only fallback to default if we have NO position at all
+          if (_userPosition == null) {
+            _mapController.move(defaultLocation, 12.0);
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(AppLocalizations.of(context)!.locationError),
+                behavior: SnackBarBehavior.floating,
+              ),
+            );
+          }
         }
       }
 
@@ -794,6 +821,13 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         },
         backgroundColor: Theme.of(context).primaryColor,
         icon: const Icon(Icons.add_a_photo, color: Colors.white),
+        // Add white border in dark mode for better visibility
+        shape: Theme.of(context).brightness == Brightness.dark
+            ? RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+                side: const BorderSide(color: Colors.white, width: 2.0),
+              )
+            : RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         label: Text(
           l10n.shareFood,
           style: const TextStyle(
@@ -892,53 +926,31 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
   // Desktop: Floating side panel on the left
   Widget _buildDesktopSidePanel(List<FoodItem> foodItems, bool hasFilters) {
-    return Positioned(
-      left: 20,
-      top: 160, // Increased to clear AppBar + Search Bar (56 + 70 + padding)
-      bottom: 20,
-      width: 420,
-      child: Card(
-        elevation: 8,
-        shadowColor: Colors.black26,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-        child: StreamBuilder<User?>(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (context, authSnapshot) {
-            final user = authSnapshot.data;
-
-            if (user == null) {
-              return _buildFoodListContent(
-                foodItems,
-                hasFilters,
-                const {},
-              );
-            }
-
-            return StreamBuilder<UserModel?>(
-              stream: _userService.getUserStream(user.uid),
-              builder: (context, userSnapshot) {
-                final favorites =
-                    userSnapshot.data?.favorites.toSet() ?? const {};
-
-                return _buildFoodListContent(
-                  foodItems,
-                  hasFilters,
-                  favorites,
-                );
-              },
-            );
-          },
-        ),
-      ),
+    return DesktopSidePanel(
+      foodItems: foodItems,
+      hasFilters: hasFilters,
+      userPosition: _userPosition,
+      isLoadingFood: _isLoadingFood,
+      userService: _userService,
+      onRefresh: () {
+        setState(() => _isLoadingFood = true);
+        _subscribeToFoodItems();
+      },
+      onItemTap: (item) => _handleMarkerTap(item.id, _foodItems),
+      onShowFilterDialog: () {
+        _showFilterDialog();
+      },
+      dismissedNotificationIds: _dismissedNotificationIds,
+      onDismissNotification: _handleNotificationDismiss,
+      onLoadMore: _loadMoreItems,
+      isLoadingMore: _isLoadingMore,
+      hasMoreItems: _hasMoreItems,
     );
   }
 
-  // Mobile: Bottom sheet with SafeArea
+  // Mobile: Bottom sheet
   Widget _buildMobileBottomSheet(List<FoodItem> foodItems, bool hasFilters) {
-    // Calculate safe top padding (Status Bar + AppBar + Search Bar)
-    // AppBar height = kToolbarHeight (56.0)
-    // Search Bar Container height = 70.0
-    // We add a little extra buffer (16.0)
+    // Calculate safe top padding to prevent overlap with search/app bar
     final double safeTopPadding =
         MediaQuery.of(context).padding.top + kToolbarHeight + 70 + 16;
 
@@ -948,7 +960,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, authSnapshot) {
           final user = authSnapshot.data;
-          if (user == null) {
+          // Use a function to build the sheet to avoid duplication
+          Widget buildSheet(Set<String> favorites) {
             return HomeBottomSheet(
               key: _bottomSheetKey,
               foodItems: foodItems,
@@ -972,14 +985,17 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                 }
               },
               hasFilters: hasFilters,
-              favoriteIds: const {},
+              favoriteIds: favorites,
               dismissedIds: _dismissedNotificationIds,
               onDismissNotification: _handleNotificationDismiss,
-              // Pagination
               onLoadMore: _loadMoreItems,
               isLoadingMore: _isLoadingMore,
               hasMoreItems: _hasMoreItems,
             );
+          }
+
+          if (user == null) {
+            return buildSheet(const {});
           }
 
           return StreamBuilder<UserModel?>(
@@ -987,120 +1003,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             builder: (context, userSnapshot) {
               final favorites =
                   userSnapshot.data?.favorites.toSet() ?? const {};
-
-              return HomeBottomSheet(
-                key: _bottomSheetKey,
-                foodItems: foodItems,
-                userPosition: _userPosition,
-                isLoading: _isLoadingFood,
-                onRefresh: () {
-                  setState(() => _isLoadingFood = true);
-                  _subscribeToFoodItems();
-                },
-                onCenterMap: _centerMapOnUser,
-                onItemTap: (item) => _handleMarkerTap(item.id, _foodItems),
-                onEmptyStateAction: () {
-                  if (hasFilters) {
-                    _showFilterDialog();
-                  } else {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AddFoodScreen()),
-                    );
-                  }
-                },
-                hasFilters: hasFilters,
-                favoriteIds: favorites,
-                dismissedIds: _dismissedNotificationIds,
-                onDismissNotification: _handleNotificationDismiss,
-                // Pagination
-                onLoadMore: _loadMoreItems,
-                isLoadingMore: _isLoadingMore,
-                hasMoreItems: _hasMoreItems,
-              );
+              return buildSheet(favorites);
             },
           );
         },
       ),
-    );
-  }
-
-  // Shared food list content for desktop panel
-  Widget _buildFoodListContent(
-    List<FoodItem> foodItems,
-    bool hasFilters,
-    Set<String> favoriteIds,
-  ) {
-    return Column(
-      children: [
-        // Header
-        Container(
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: Theme.of(context).primaryColor,
-            borderRadius: const BorderRadius.vertical(
-              top: Radius.circular(24),
-            ),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Text(
-                  AppLocalizations.of(context)!.nearbyFood,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-              ),
-              if (hasFilters)
-                Container(
-                  width: 8,
-                  height: 8,
-                  decoration: const BoxDecoration(
-                    color: AppTheme.accentOrange,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-            ],
-          ),
-        ),
-        // List
-        Expanded(
-          child: HomeListWidget(
-            foodItems: foodItems,
-            userPosition: _userPosition,
-            scrollController:
-                ScrollController(), // Create fresh scroll controller for desktop
-            onRefresh: () {
-              setState(() => _isLoadingFood = true);
-              _subscribeToFoodItems();
-            },
-            isLoading: _isLoadingFood,
-            onItemTap: (item) => _handleMarkerTap(item.id, _foodItems),
-            onEmptyStateAction: () {
-              if (hasFilters) {
-                _showFilterDialog();
-              } else {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AddFoodScreen()),
-                );
-              }
-            },
-            hasFilters: hasFilters,
-            favoriteIds: favoriteIds,
-            dismissedIds: _dismissedNotificationIds,
-            onDismissNotification: _handleNotificationDismiss,
-            // Pagination
-            onLoadMore: _loadMoreItems,
-            isLoadingMore: _isLoadingMore,
-            hasMoreItems: _hasMoreItems,
-          ),
-        ),
-      ],
     );
   }
 }

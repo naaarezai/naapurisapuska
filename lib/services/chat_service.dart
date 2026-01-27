@@ -102,8 +102,8 @@ class ChatService {
       // Luo tyhjä chat-dokumentti jotta lukuoikeus toimii
       await chatRef.set({
         'participants': [currentUser.uid, otherUserId],
-        'createdAt': Timestamp.now(),
-        'updatedAt': Timestamp.now(),
+        'createdAt': FieldValue.serverTimestamp(),
+        'updatedAt': FieldValue.serverTimestamp(),
         'unreadCount_$otherUserId': 0,
         'unreadCount_${currentUser.uid}': 0,
       });
@@ -136,7 +136,6 @@ class ChatService {
     if (text.trim().isEmpty) throw Exception('Viesti ei voi olla tyhjä');
 
     final chatId = _getChatId(currentUser.uid, otherUserId);
-    final now = DateTime.now();
 
     final userDoc =
         await _firestore.collection('users').doc(currentUser.uid).get();
@@ -153,8 +152,8 @@ class ChatService {
       // Luo chat-dokumentti ensin jos sitä ei ole
       await chatRef.set({
         'participants': [currentUser.uid, otherUserId],
-        'createdAt': Timestamp.fromDate(now),
-        'updatedAt': Timestamp.fromDate(now),
+        'createdAt': FieldValue.serverTimestamp(),
+        'updatedAt': FieldValue.serverTimestamp(),
         'unreadCount_$otherUserId': 0, // Alustetaan laskurit
         'unreadCount_${currentUser.uid}': 0,
       });
@@ -170,7 +169,7 @@ class ChatService {
       'senderName': userName,
       'senderProfileImageUrl': userProfileImageUrl,
       'text': text.trim(),
-      'timestamp': Timestamp.fromDate(now),
+      'timestamp': FieldValue.serverTimestamp(),
       'isRead': false,
     });
 
@@ -178,9 +177,9 @@ class ChatService {
     await _firestore.collection('chats').doc(chatId).set({
       'participants': [currentUser.uid, otherUserId],
       'lastMessage': text.trim(),
-      'lastMessageTime': Timestamp.fromDate(now),
+      'lastMessageTime': FieldValue.serverTimestamp(),
       'lastMessageSenderId': currentUser.uid,
-      'updatedAt': Timestamp.fromDate(now),
+      'updatedAt': FieldValue.serverTimestamp(),
       // TÄMÄ ON UUSI RIVI: Kasvata vastaanottajan (otherUserId) unread-laskuria yhdellä
       'unreadCount_$otherUserId': FieldValue.increment(1),
     }, SetOptions(merge: true));
