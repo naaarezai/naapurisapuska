@@ -1,16 +1,10 @@
 import UIKit
 import Flutter
-import GoogleMaps
-
-@main
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-    // 1. Google Maps API-avain
-    GMSServices.provideAPIKey("AIzaSyDT3PRXMzV80fePw2zw_OzBlUBMpJSjifM")
-
     // 2. TÄMÄ RIVI PUUTTUI!
     // Tämä on pakollinen, jotta ilmoitukset (ja se token) toimivat luotettavasti.
     if #available(iOS 10.0, *) {
