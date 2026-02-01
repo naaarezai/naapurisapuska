@@ -148,22 +148,59 @@ exports.sendChatNotification = functions.firestore
       return null;
     }
 
-    // 4. Lähetä ilmoitus
+    // 4. Laske lukemattomien viestien kokonaismäärä merkkiä (badge) varten
+    let badgeCount = 1; // Oletus jos laskenta epäonnistuu
+    try {
+      const chatsSnapshot = await admin.firestore()
+        .collection('chats')
+        .where('participants', 'array-contains', recipientId)
+        .get();
+
+      let totalUnread = 0;
+      chatsSnapshot.forEach(doc => {
+        const d = doc.data();
+        const unread = d[`unreadCount_${recipientId}`] || 0;
+        totalUnread += Number(unread);
+      });
+      // Varmistetaan että nykyinen viesti on mukana laskussa (jos client ei ehtinyt päivittää)
+      // Huom: Client päivittää 'unreadCount' kentän yleensä samaan aikaan.
+      // Jos luotamme siihen että client on nopea, totalUnread on oikein. 
+      // Varmuuden vuoksi, jos totalUnread on 0, asetetaan 1.
+      badgeCount = totalUnread > 0 ? totalUnread : 1;
+    } catch (e) {
+      console.error("Virhe badge-laskennassa:", e);
+    }
+
+    // 5. Lähetä ilmoitus
     const message = {
       notification: {
         title: senderName,
         body: text,
       },
-      token: userData.fcmToken, // Huom: Yhdelle lähetettäessä käytetään 'token', ei 'tokens'
+      token: userData.fcmToken,
       data: {
         type: "chat",
         chatId: chatId
+      },
+      apns: {
+        payload: {
+          aps: {
+            badge: badgeCount,
+            sound: "default"
+          }
+        }
+      },
+      android: {
+        notification: {
+          sound: "default",
+          notificationCount: badgeCount
+        }
       }
     };
 
     try {
       await admin.messaging().send(message);
-      console.log("Chat-ilmoitus lähetetty käyttäjälle:", recipientId);
+      console.log(`Chat-ilmoitus lähetetty käyttäjälle ${recipientId}, badge: ${badgeCount}`);
     } catch (error) {
       console.error("Virhe chat-ilmoituksen lähetyksessä:", error);
     }
