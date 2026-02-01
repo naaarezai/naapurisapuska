@@ -70,6 +70,18 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   final GlobalKey<HomeBottomSheetState> _bottomSheetKey = GlobalKey();
   final FocusNode _searchFocusNode = FocusNode();
 
+  void _requireAuth(BuildContext context, VoidCallback onSuccess) {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+      );
+    } else {
+      onSuccess();
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -720,18 +732,12 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                 ),
                 tooltip: l10n.messages,
                 onPressed: () {
-                  final user = FirebaseAuth.instance.currentUser;
-                  if (user == null) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const LoginScreen()));
-                  } else {
+                  _requireAuth(context, () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => ChatListScreen()));
-                  }
+                  });
                 },
               );
             },
@@ -745,18 +751,12 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               },
             ),
             onPressed: () {
-              final user = FirebaseAuth.instance.currentUser;
-              if (user == null) {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const LoginScreen()));
-              } else {
+              _requireAuth(context, () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const ProfileScreen()));
-              }
+              });
             },
             tooltip: l10n.login,
           ),
@@ -814,10 +814,12 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddFoodScreen()),
-          );
+          _requireAuth(context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AddFoodScreen()),
+            );
+          });
         },
         backgroundColor: Theme.of(context).primaryColor,
         icon: const Icon(Icons.add_a_photo, color: Colors.white),
@@ -995,6 +997,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           }
 
           if (user == null) {
+            // Guest mode: Show empty favorites
             return buildSheet(const {});
           }
 
