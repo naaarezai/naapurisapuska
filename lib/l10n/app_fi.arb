@@ -154,6 +154,17 @@
   "haveAccount": "Onko sinulla jo tili? Kirjaudu",
   "noAccount": "Eikö sinulla ole tiliä? Rekisteröidy",
   "appSlogan": "Jakamassa ruokaa naapureille",
+  
+  "continueWithGoogle": "Jatka Google-tilillä",
+  "continueWithApple": "Jatka Apple-tilillä",
+  "continueWithMicrosoft": "Jatka Microsoft-tilillä",
+  "orContinueWith": "Tai jatka",
+  "socialLoginError": "Kirjautuminen epäonnistui: {error}",
+  "@socialLoginError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
 
   "categoryBakedGoods": "Leivonnaiset",
   "categoryFruits": "Hedelmät",

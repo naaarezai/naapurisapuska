@@ -381,6 +381,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appSlogan => 'Sharing food with neighbors';
 
   @override
+  String get continueWithGoogle => 'Continue with Google';
+
+  @override
+  String get continueWithApple => 'Continue with Apple';
+
+  @override
+  String get continueWithMicrosoft => 'Continue with Microsoft';
+
+  @override
+  String get orContinueWith => 'Or continue with';
+
+  @override
+  String socialLoginError(Object error) {
+    return 'Login failed: $error';
+  }
+
+  @override
   String get categoryBakedGoods => 'Baked Goods';
 
   @override

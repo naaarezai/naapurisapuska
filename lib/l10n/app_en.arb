@@ -154,6 +154,17 @@
   "haveAccount": "Already have an account? Login",
   "noAccount": "Don't have an account? Sign Up",
   "appSlogan": "Sharing food with neighbors",
+  
+  "continueWithGoogle": "Continue with Google",
+  "continueWithApple": "Continue with Apple",
+  "continueWithMicrosoft": "Continue with Microsoft",
+  "orContinueWith": "Or continue with",
+  "socialLoginError": "Login failed: {error}",
+  "@socialLoginError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
 
   "categoryBakedGoods": "Baked Goods",
   "categoryFruits": "Fruits",

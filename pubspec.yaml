@@ -60,6 +60,10 @@ dependencies:
   latlong2: ^0.9.1
   flutter_native_splash: ^2.3.1
   
+  # Social Authentication
+  google_sign_in: ^6.2.1
+  sign_in_with_apple: ^6.1.2
+  
 
 dev_dependencies:
   flutter_launcher_icons: ^0.14.4

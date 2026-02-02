@@ -1,6 +1,9 @@
+import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../services/user_service.dart';
+import '../services/auth_service.dart';
 import '../models/user_model.dart';
 import '../utils/error_helper.dart';
 import '../l10n/app_localizations.dart';
@@ -20,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
   final _auth = FirebaseAuth.instance;
   final _userService = UserService();
+  final _authService = AuthService();
   bool _isLoading = false;
   bool _isSignUp = false;
 
@@ -117,9 +121,98 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  // --- GOOGLE SIGN-IN ---
+  Future<void> _signInWithGoogle() async {
+    setState(() => _isLoading = true);
+
+    try {
+      final userCredential = await _authService.signInWithGoogle();
+
+      if (userCredential != null && mounted) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              AppLocalizations.of(context)!.socialLoginError(e.toString()),
+            ),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
+
+  // --- APPLE SIGN-IN ---
+  Future<void> _signInWithApple() async {
+    setState(() => _isLoading = true);
+
+    try {
+      final userCredential = await _authService.signInWithApple();
+
+      if (userCredential != null && mounted) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              AppLocalizations.of(context)!.socialLoginError(e.toString()),
+            ),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
+
+  Widget _buildSocialButton({
+    required String text,
+    required VoidCallback onPressed,
+    required Color backgroundColor,
+    required Color textColor,
+    required Widget icon,
+  }) {
+    return SizedBox(
+      width: double.infinity,
+      height: 56,
+      child: ElevatedButton.icon(
+        onPressed: _isLoading ? null : onPressed,
+        icon: icon,
+        label: Text(text),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor,
+          foregroundColor: textColor,
+          elevation: 1,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: BorderSide(
+              color: backgroundColor == Colors.white
+                  ? Colors.grey.shade300
+                  : backgroundColor,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final showAppleButton = !kIsWeb && (Platform.isIOS || Platform.isMacOS);
+
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
@@ -134,7 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: 40),
+                const SizedBox(height: 20),
                 Icon(
                   _isSignUp ? Icons.person_add : Icons.login,
                   size: 80,
@@ -147,7 +240,53 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontSize: 24, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 32),
+
+                // Social Login Buttons
+                _buildSocialButton(
+                  text: l10n.continueWithGoogle,
+                  onPressed: _signInWithGoogle,
+                  backgroundColor: Colors.white,
+                  textColor: Colors.black87,
+                  icon: Image.asset(
+                    'assets/google_logo.png',
+                    height: 24,
+                    width: 24,
+                    errorBuilder: (context, error, stackTrace) =>
+                        const Icon(Icons.login, size: 24),
+                  ),
+                ),
+                if (showAppleButton) ...[
+                  const SizedBox(height: 12),
+                  _buildSocialButton(
+                    text: l10n.continueWithApple,
+                    onPressed: _signInWithApple,
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    icon: const Icon(Icons.apple, size: 24),
+                  ),
+                ],
+
+                const SizedBox(height: 32),
+
+                // Divider with "Or continue with"
+                Row(
+                  children: [
+                    const Expanded(child: Divider()),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Text(
+                        l10n.orContinueWith,
+                        style: TextStyle(color: Colors.grey.shade600),
+                      ),
+                    ),
+                    const Expanded(child: Divider()),
+                  ],
+                ),
+
+                const SizedBox(height: 32),
+
+                // Phone/Password Login
                 TextFormField(
                   controller: _phoneController,
                   decoration: InputDecoration(

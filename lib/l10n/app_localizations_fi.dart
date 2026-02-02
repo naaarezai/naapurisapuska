@@ -380,6 +380,23 @@ class AppLocalizationsFi extends AppLocalizations {
   String get appSlogan => 'Jakamassa ruokaa naapureille';
 
   @override
+  String get continueWithGoogle => 'Jatka Google-tilillä';
+
+  @override
+  String get continueWithApple => 'Jatka Apple-tilillä';
+
+  @override
+  String get continueWithMicrosoft => 'Jatka Microsoft-tilillä';
+
+  @override
+  String get orContinueWith => 'Tai jatka';
+
+  @override
+  String socialLoginError(Object error) {
+    return 'Kirjautuminen epäonnistui: $error';
+  }
+
+  @override
   String get categoryBakedGoods => 'Leivonnaiset';
 
   @override

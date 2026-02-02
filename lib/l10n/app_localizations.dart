@@ -818,6 +818,36 @@ abstract class AppLocalizations {
   /// **'Jakamassa ruokaa naapureille'**
   String get appSlogan;
 
+  /// No description provided for @continueWithGoogle.
+  ///
+  /// In fi, this message translates to:
+  /// **'Jatka Google-tilillä'**
+  String get continueWithGoogle;
+
+  /// No description provided for @continueWithApple.
+  ///
+  /// In fi, this message translates to:
+  /// **'Jatka Apple-tilillä'**
+  String get continueWithApple;
+
+  /// No description provided for @continueWithMicrosoft.
+  ///
+  /// In fi, this message translates to:
+  /// **'Jatka Microsoft-tilillä'**
+  String get continueWithMicrosoft;
+
+  /// No description provided for @orContinueWith.
+  ///
+  /// In fi, this message translates to:
+  /// **'Tai jatka'**
+  String get orContinueWith;
+
+  /// No description provided for @socialLoginError.
+  ///
+  /// In fi, this message translates to:
+  /// **'Kirjautuminen epäonnistui: {error}'**
+  String socialLoginError(Object error);
+
   /// No description provided for @categoryBakedGoods.
   ///
   /// In fi, this message translates to:
