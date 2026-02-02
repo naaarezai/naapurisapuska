@@ -12,12 +12,7 @@ class AuthService {
   final UserService _userService = UserService();
 
   // Google Sign-In Configuration
-  final GoogleSignIn _googleSignIn = GoogleSignIn(
-    scopes: ['email', 'profile'],
-    // serverClientId needed for iOS Firebase auth
-    serverClientId:
-        '660382727156-pn9sbenpp9bvlvhi5rpaqeptnobg196t.apps.googleusercontent.com',
-  );
+  final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email', 'profile']);
 
   /// Sign in with Google
   /// Returns UserCredential if successful, null otherwise
@@ -66,7 +61,8 @@ class AuthService {
     // Check if platform supports Apple Sign-In
     if (kIsWeb || !(Platform.isIOS || Platform.isMacOS)) {
       throw UnsupportedError(
-          'Apple Sign-In is only supported on iOS and macOS');
+        'Apple Sign-In is only supported on iOS and macOS',
+      );
     }
 
     try {
@@ -162,9 +158,6 @@ class AuthService {
 
   /// Sign out from all providers
   Future<void> signOut() async {
-    await Future.wait([
-      _auth.signOut(),
-      _googleSignIn.signOut(),
-    ]);
+    await Future.wait([_auth.signOut(), _googleSignIn.signOut()]);
   }
 }
