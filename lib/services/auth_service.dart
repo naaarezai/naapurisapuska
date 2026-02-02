@@ -12,13 +12,8 @@ class AuthService {
   final UserService _userService = UserService();
 
   // Google Sign-In Configuration
-  // iOS needs serverClientId for Firebase auth, Android uses google-services.json
   final GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: ['email', 'profile'],
-    // Only set serverClientId for iOS
-    serverClientId: (!kIsWeb && Platform.isIOS)
-        ? '660382727156-pn9sbenpp9bvlvhi5rpaqeptnobg196t.apps.googleusercontent.com'
-        : null,
   );
 
   /// Sign in with Google
