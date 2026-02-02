@@ -14,6 +14,9 @@ class AuthService {
   // Google Sign-In Configuration
   final GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: ['email', 'profile'],
+    // serverClientId needed for iOS Firebase auth
+    serverClientId:
+        '660382727156-pn9sbenpp9bvlvhi5rpaqeptnobg196t.apps.googleusercontent.com',
   );
 
   /// Sign in with Google
@@ -50,8 +53,9 @@ class AuthService {
       );
 
       return userCredential;
-    } catch (e) {
+    } catch (e, stackTrace) {
       debugPrint('Google Sign-In Error: $e');
+      debugPrint('Stack trace: $stackTrace');
       rethrow;
     }
   }
