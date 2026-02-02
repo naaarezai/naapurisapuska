@@ -12,7 +12,20 @@
           "package_name": "com.napurisapuska.fi"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "660382727156-pq035bardi9mnt2h54ign7sbql904vdj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.napurisapuska.fi",
+            "certificate_hash": "4c99cdb54653f179cd858d5a2312f0189ca2a75c"
+          }
+        },
+        {
+          "client_id": "660382727156-anonu71rdacp93cjapppdprdpdfnrocl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBlFahwKe5T1g5VDeeBtnyVY2x4QVavbaU"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660382727156-anonu71rdacp93cjapppdprdpdfnrocl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "660382727156-pn9sbenpp9bvlvhi5rpaqeptnobg196t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.napurisapuska.fi"
+              }
+            }
+          ]
         }
       }
     }
