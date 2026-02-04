@@ -352,6 +352,35 @@ class _LoginScreenState extends State<LoginScreen> {
                       : () => setState(() => _isSignUp = !_isSignUp),
                   child: Text(_isSignUp ? l10n.haveAccount : l10n.noAccount),
                 ),
+
+                // ⭐ GUEST BROWSING BUTTON FOR APPLE COMPLIANCE ⭐
+                const SizedBox(height: 24),
+                const Divider(),
+                const SizedBox(height: 16),
+
+                OutlinedButton.icon(
+                  onPressed: _isLoading
+                      ? null
+                      : () {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                                builder: (context) => const HomeScreen()),
+                          );
+                        },
+                  icon: const Icon(Icons.explore_outlined),
+                  label: Text(
+                    l10n.continueAsGuest,
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                  style: OutlinedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    side: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 2,
+                    ),
+                    foregroundColor: Theme.of(context).primaryColor,
+                  ),
+                ),
               ],
             ),
           ),

@@ -159,6 +159,10 @@
   "continueWithApple": "Continue with Apple",
   "continueWithMicrosoft": "Continue with Microsoft",
   "orContinueWith": "Or continue with",
+  "continueAsGuest": "Browse Without Account",
+  "@continueAsGuest": {
+    "description": "Button text to continue browsing without logging in"
+  },
   "socialLoginError": "Login failed: {error}",
   "@socialLoginError": {
     "placeholders": {

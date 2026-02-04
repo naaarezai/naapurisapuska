@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../services/theme_service.dart';
 import '../services/locale_service.dart';
 import '../services/user_service.dart';
-import 'login_screen.dart';
+import 'home_screen.dart'; // KORJAUS: Vaihdettu LoginScreen -> HomeScreen
 import 'terms_of_use_screen.dart';
 import 'privacy_policy_screen.dart';
 import '../l10n/app_localizations.dart';
@@ -46,8 +46,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       try {
         await _userService.deleteAccount();
         if (mounted) {
+          // ⭐ APPLE COMPLIANCE: Vie HomeScreen:iin tilin poiston jälkeen
+          // Käyttäjä voi jatkaa selaamista vieraana
           Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => const LoginScreen()),
+            MaterialPageRoute(builder: (context) => const HomeScreen()),
             (route) => false,
           );
         }

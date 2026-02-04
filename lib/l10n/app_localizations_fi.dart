@@ -392,6 +392,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get orContinueWith => 'Tai jatka';
 
   @override
+  String get continueAsGuest => 'Selaa ilman kirjautumista';
+
+  @override
   String socialLoginError(Object error) {
     return 'Kirjautuminen epäonnistui: $error';
   }

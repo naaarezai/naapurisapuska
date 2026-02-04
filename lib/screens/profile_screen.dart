@@ -4,7 +4,7 @@ import '../models/user_model.dart';
 import '../models/food_item.dart';
 import '../services/user_service.dart';
 import '../services/database_service.dart';
-import '../screens/login_screen.dart';
+import 'home_screen.dart'; // KORJAUS: Vaihdettu LoginScreen -> HomeScreen
 import 'edit_profile_screen.dart';
 import 'food_list_screen.dart';
 import 'settings_screen.dart';
@@ -57,8 +57,10 @@ class _ProfileScreenState extends State<ProfileScreen>
   Future<void> _signOut() async {
     await FirebaseAuth.instance.signOut();
     if (mounted) {
+      // ⭐ APPLE COMPLIANCE: Vie HomeScreen:iin, ei LoginScreen:iin
+      // Käyttäjä voi jatkaa selaamista vieraana
       Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
         (route) => false,
       );
     }

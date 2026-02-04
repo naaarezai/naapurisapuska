@@ -159,6 +159,10 @@
   "continueWithApple": "Jatka Apple-tilillä",
   "continueWithMicrosoft": "Jatka Microsoft-tilillä",
   "orContinueWith": "Tai jatka",
+  "continueAsGuest": "Selaa ilman kirjautumista",
+  "@continueAsGuest": {
+    "description": "Nappi joka vie käyttäjän selaamaan ilman kirjautumista"
+  },
   "socialLoginError": "Kirjautuminen epäonnistui: {error}",
   "@socialLoginError": {
     "placeholders": {

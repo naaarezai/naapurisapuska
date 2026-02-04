@@ -842,6 +842,12 @@ abstract class AppLocalizations {
   /// **'Tai jatka'**
   String get orContinueWith;
 
+  /// Nappi joka vie käyttäjän selaamaan ilman kirjautumista
+  ///
+  /// In fi, this message translates to:
+  /// **'Selaa ilman kirjautumista'**
+  String get continueAsGuest;
+
   /// No description provided for @socialLoginError.
   ///
   /// In fi, this message translates to:

@@ -393,6 +393,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get orContinueWith => 'Or continue with';
 
   @override
+  String get continueAsGuest => 'Browse Without Account';
+
+  @override
   String socialLoginError(Object error) {
     return 'Login failed: $error';
   }

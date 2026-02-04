@@ -14,6 +14,10 @@ class AuthService {
   // Google Sign-In Configuration
   final GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: ['email', 'profile'],
+    // Web needs explicit clientId
+    clientId: kIsWeb
+        ? '660382727156-anonu71rdacp93cjapppdprdpdfnrocl.apps.googleusercontent.com'
+        : null,
   );
 
   /// Sign in with Google
