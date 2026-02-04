@@ -246,8 +246,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 _buildSocialButton(
                   text: l10n.continueWithGoogle,
                   onPressed: _signInWithGoogle,
-                  backgroundColor: Colors.white,
-                  textColor: Colors.black87,
+                  backgroundColor:
+                      Theme.of(context).brightness == Brightness.dark
+                          ? const Color(0xFF2D2D2D) // Dark gray for dark mode
+                          : Colors.white,
+                  textColor: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white
+                      : Colors.black87,
                   icon: Image.asset(
                     'assets/google_logo.png',
                     height: 24,
@@ -358,27 +363,42 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Divider(),
                 const SizedBox(height: 16),
 
-                OutlinedButton.icon(
-                  onPressed: _isLoading
-                      ? null
-                      : () {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                                builder: (context) => const HomeScreen()),
-                          );
-                        },
-                  icon: const Icon(Icons.explore_outlined),
-                  label: Text(
-                    l10n.continueAsGuest,
-                    style: const TextStyle(fontSize: 16),
-                  ),
-                  style: OutlinedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    side: BorderSide(
-                      color: Theme.of(context).primaryColor,
-                      width: 2,
+                SizedBox(
+                  width: double.infinity,
+                  height: 56,
+                  child: ElevatedButton.icon(
+                    onPressed: _isLoading
+                        ? null
+                        : () {
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => const HomeScreen()),
+                            );
+                          },
+                    icon: const Icon(Icons.explore_outlined, size: 24),
+                    label: Text(
+                      l10n.continueAsGuest,
+                      style: const TextStyle(fontSize: 16),
                     ),
-                    foregroundColor: Theme.of(context).primaryColor,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).brightness ==
+                              Brightness.dark
+                          ? const Color(0xFF2D2D2D) // Dark gray for dark mode
+                          : Colors.white,
+                      foregroundColor:
+                          Theme.of(context).brightness == Brightness.dark
+                              ? Colors.white
+                              : Colors.black87,
+                      elevation: 1,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        side: BorderSide(
+                          color: Theme.of(context).brightness == Brightness.dark
+                              ? const Color(0xFF2D2D2D)
+                              : Colors.grey.shade300,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],

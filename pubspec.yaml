@@ -1,7 +1,7 @@
 name: naapurisapuska
 description: Naapuruston ruokahävikki-sovellus.
 publish_to: 'none'
-version: 1.0.25+25
+version: 1.0.28+28
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -31,7 +31,7 @@ dependencies:
   dart_geohash: ^2.1.0
 
   # Kamera ja kuvat
-  image_picker: ^1.0.7
+  image_picker: ^1.1.2
 
   # Apukirjastot
   intl: ^0.20.2
