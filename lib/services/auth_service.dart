@@ -14,9 +14,13 @@ class AuthService {
   // Google Sign-In Configuration
   final GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: ['email', 'profile'],
-    // Web needs explicit clientId
+    // ⚠️ CRITICAL: For web platform, you MUST provide the Web OAuth Client ID
+    // Get it from: Google Cloud Console → APIs & Services → Credentials
+    // Look for "Web client" (NOT Android or iOS client)
+    // Replace the placeholder below with your actual Web Client ID
     clientId: kIsWeb
         ? '660382727156-anonu71rdacp93cjapppdprdpdfnrocl.apps.googleusercontent.com'
+        // ⚠️ REPLACE THIS
         : null,
   );
 
