@@ -1,119 +1,331 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - NaapuriSapuska</title>
+    <title>Tietosuojaseloste - NaapuriSapuska</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logo-pieni.png">
+
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
-        h1 { border-bottom: 2px solid #388E3C; padding-bottom: 10px; color: #388E3C; }
-        h2 { margin-top: 30px; color: #2E7D32; }
-        .lang-switch { text-align: right; margin-bottom: 20px; }
-        .lang-switch button { padding: 5px 10px; cursor: pointer; }
-        .hidden { display: none; }
+        :root {
+            --primary-start: #10B981;
+            --primary-end: #059669;
+            --dark: #0F172A;
+            --gray: #64748B;
+            --gray-light: #94A3B8;
+            --bg-light: #F8FAFC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark);
+            background: var(--bg-light);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            color: white;
+            padding: 60px 24px;
+            margin-bottom: 40px;
+        }
+
+        .header .container {
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .last-updated {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .lang-switch {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .lang-switch button {
+            padding: 10px 20px;
+            margin: 0 8px;
+            border: 2px solid var(--primary-start);
+            background: white;
+            color: var(--primary-start);
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .lang-switch button:hover {
+            background: var(--primary-start);
+            color: white;
+        }
+
+        .lang-switch button.active {
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            color: white;
+        }
+
+        .content {
+            background: white;
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 32px 24px;
+            }
+
+            .header {
+                padding: 40px 24px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <div class="lang-switch">
-        <button onclick="showFi()">Suomi 🇫🇮</button>
-        <button onclick="showEn()">English 🇬🇧</button>
+    <div class="header">
+        <div class="container">
+            <h1>Tietosuojaseloste</h1>
+            <p class="last-updated">Päivitetty: 19.1.2026</p>
+        </div>
     </div>
 
-    <div id="fi">
-        <h1>Tietosuojaseloste</h1>
-        <p><strong>Viimeksi päivitetty:</strong> 25.01.2025</p>
-        <p>Tämä tietosuojaseloste koskee <strong>NaapuriSapuska</strong>-mobiilisovellusta (myöhemmin "Sovellus"). Lataamalla tai käyttämällä Sovellusta hyväksyt tämän selosteen ehdot.</p>
+    <div class="container">
+        <div class="lang-switch">
+            <button onclick="showFi()" class="active" id="btnFi">🇫🇮 Suomi</button>
+            <button onclick="showEn()" id="btnEn">🇬🇧 English</button>
+        </div>
 
-        <h2>1. Kerättävät tiedot</h2>
-        <p>Jotta Sovellus toimisi, keräämme seuraavia tietoja:</p>
-        <ul>
-            <li><strong>Käyttäjätiedot:</strong> Nimi, puhelinnumero ja sähköpostiosoite (kirjautumista varten).</li>
-            <li><strong>Sijaintitiedot:</strong> Sovellus käyttää laitteesi sijaintia näyttääkseen lähellä olevat ruokailmoitukset kartalla. Sijaintia kysytään vain sovellusta käytettäessä.</li>
-            <li><strong>Kuvat ja Media:</strong> Jos lisäät ilmoituksen tai vaihdat profiilikuvan, pyydämme lupaa käyttää kameraa tai galleriaa. Kuvat tallennetaan turvallisesti palvelimellemme.</li>
-            <li><strong>Viestit:</strong> Sovelluksen sisäiset chat-viestit tallennetaan, jotta voit kommunikoida muiden käyttäjien kanssa.</li>
-        </ul>
+        <div class="content" id="fi">
+            <h2>1. Rekisterinpitäjä</h2>
+            <p>Tämän palvelun ja rekisterin ylläpitäjä on koodaaja itse.</p>
+            <p><strong>Sähköposti:</strong> nasratollah.rezai@gmail.com (Myöhemmin tässä tekstissä "Me" tai
+                "Palveluntarjoaja").</p>
 
-        <h2>2. Mihin tietoja käytetään?</h2>
-        <ul>
-            <li>Ruokailmoitusten näyttämiseen kartalla oikeassa paikassa.</li>
-            <li>Käyttäjien väliseen viestintään noutojen sopimiseksi.</li>
-            <li>Väärinkäytösten estämiseen ja turvallisuuden takaamiseen.</li>
-        </ul>
+            <h2>2. Mitä tietoja keräämme?</h2>
+            <p>Jotta Naapurisapuska-sovellus toimisi tarkoitetulla tavalla, keräämme käyttäjistä seuraavia tietoja:</p>
 
-        <h2>3. Tietojen jakaminen</h2>
-        <p>Emme myy tietojasi kolmansille osapuolille. Käytämme luotettavia palveluntarjoajia sovelluksen toimintaan:</p>
-        <ul>
-            <li><strong>Google Firebase:</strong> Tietokanta, kirjautuminen ja kuvien tallennus.</li>
-            <li><strong>Google Maps:</strong> Karttapalvelut.</li>
-        </ul>
+            <p><strong>A. Käyttäjän antamat tiedot</strong></p>
+            <p><strong>Tilitiedot:</strong> Sähköpostiosoite, nimimerkki ja profiilikuva (rekisteröitymisen yhteydessä).
+            </p>
+            <p><strong>Käyttäjän luoma sisältö:</strong> Sovellukseen lataamasi kuvat ruoasta, ruoan kuvaustekstit sekä
+                chat-viestit, joita lähetät muille käyttäjille noudon sopimiseksi.</p>
 
-        <h2>4. Käyttäjän oikeudet (GDPR)</h2>
-        <p>Sinulla on oikeus:</p>
-        <ul>
-            <li><strong>Poistaa tilisi:</strong> Voit poistaa tilisi ja kaikki tietosi pysyvästi sovelluksen Asetukset-valikosta kohdasta "Poista tili". Tämä toiminto on välitön ja peruuttamaton.</li>
-            <li><strong>Tarkastaa tietosi:</strong> Voit nähdä omat tietosi sovelluksen profiili-näkymässä.</li>
-            <li><strong>Ilmianna sisältö:</strong> Voit ilmiantaa asiatonta sisältöä tai käyttäjiä sovelluksen sisällä.</li>
-        </ul>
+            <p><strong>B. Automaattisesti kerättävät tiedot</strong></p>
+            <p><strong>Sijaintitiedot:</strong> Keräämme tarkan sijaintisi (GPS) vain silloin kun käytät sovellusta,
+                jotta voimme näyttää sinulle lähellä olevat ruokailmoitukset kartalla. Emme seuraa sijaintiasi
+                taustalla, kun sovellus on suljettu.</p>
+            <p><strong>Laitetiedot:</strong> Tieto puhelimen mallista ja käyttöjärjestelmästä virheiden korjaamista
+                varten.</p>
 
-        <h2>5. Yhteystiedot</h2>
-        <p>Jos sinulla on kysyttävää tietosuojasta, ota yhteyttä:</p>
-        <p>Nasratollah Rezai<br>
-        Sähköposti: nasratollah.rezai@gmail.com</p>
-    </div>
+            <h2>3. Mihin käytämme tietojasi?</h2>
+            <p>Käytämme kerättyjä tietoja vain seuraaviin tarkoituksiin:</p>
+            <p><strong>Palvelun tarjoaminen:</strong> Jotta voit nähdä ruokailmoitukset kartalla ja ottaa yhteyttä
+                muihin käyttäjiin.</p>
+            <p><strong>Tietoturva:</strong> Käyttäjätilin suojaaminen ja väärinkäytösten estäminen.</p>
+            <p><strong>Viestintä:</strong> Ilmoittaaksemme sinulle (esim. Push-ilmoituksella), kun joku on kiinnostunut
+                ilmoittamastasi ruoasta.</p>
+            <p><strong>Tekoäly (AI):</strong> Käytämme laitteessa toimivaa tekoälyä (Machine Learning) tunnistamaan
+                kuvista ruoan kategorian (esim. hedelmä/leipä) ilmoituksen tekemisen nopeuttamiseksi.</p>
 
-    <div id="en" class="hidden">
-        <h1>Privacy Policy</h1>
-        <p><strong>Last updated:</strong> January 25, 2025</p>
-        <p>This Privacy Policy applies to the <strong>NaapuriSapuska</strong> mobile application (hereinafter "App"). By downloading or using the App, you agree to the terms of this policy.</p>
+            <h2>4. Tietojen jakaminen kolmansille osapuolille</h2>
+            <p>Emme myy, vuokraa tai jaa tietojasi mainostajille ("No Tracking"). Jaamme tietoja vain palvelun teknisen
+                toteutuksen vaatimille luotettaville kumppaneille:</p>
+            <p><strong>Google Firebase:</strong> Käytämme Firebasea tietokantana, käyttäjien tunnistautumiseen
+                (Authentication) ja kuvien tallennukseen. Tietoja säilytetään Googlen turvallisilla palvelimilla
+                (pääosin EU-alueella tai Privacy Shield -sopimusten mukaisesti).</p>
+            <p><strong>Karttapalvelut (Google Maps / Mapbox):</strong> Sijaintitietojasi käsitellään, jotta voimme
+                piirtää kartan ja näyttää etäisyydet. Nämä palvelut eivät tallenna yksittäisen käyttäjän liikehistoriaa
+                pysyvästi.</p>
 
-        <h2>1. Information We Collect</h2>
-        <p>To provide our services, we collect the following information:</p>
-        <ul>
-            <li><strong>User Data:</strong> Name, phone number, and email (for authentication).</li>
-            <li><strong>Location Data:</strong> The App uses your device's location to display nearby food listings on the map. Location is accessed only when the app is in use.</li>
-            <li><strong>Images and Media:</strong> If you post a listing or update your profile picture, we request permission to access your camera or gallery. Images are stored securely on our servers.</li>
-            <li><strong>Messages:</strong> In-app chat messages are stored to enable communication between users.</li>
-        </ul>
+            <h2>5. Käyttäjän oikeudet (GDPR)</h2>
+            <p>Sinulla on Euroopan unionin tietosuoja-asetuksen nojalla oikeus:</p>
+            <p><strong>Tarkastaa:</strong> Mitä tietoja sinusta on tallennettu.</p>
+            <p><strong>Oikaista:</strong> Pyytää virheellisen tiedon korjaamista.</p>
+            <p><strong>Poistaa ("Oikeus tulla unohdetuksi"):</strong> Voit milloin tahansa poistaa käyttäjätilisi ja
+                kaikki siihen liittyvät tiedot suoraan sovelluksen asetuksista ("Poista tili" -painike) tai ottamalla
+                meihin yhteyttä sähköpostitse. Kun tili poistetaan, myös chat-historia ja kuvat poistuvat järjestelmästä
+                pysyvästi.</p>
 
-        <h2>2. How We Use Information</h2>
-        <ul>
-            <li>To display food listings on the map in the correct location.</li>
-            <li>To facilitate communication between users for food pickup.</li>
-            <li>To prevent abuse and ensure platform safety.</li>
-        </ul>
+            <h2>6. Tietojen säilytys</h2>
+            <p>Säilytämme tietojasi niin kauan kuin käyttäjätilisi on aktiivinen. Jos poistat tilisi, tiedot poistetaan
+                kohtuullisen ajan kuluessa (yleensä 30 päivän sisällä) varmuuskopioista.</p>
 
-        <h2>3. Data Sharing</h2>
-        <p>We do not sell your data to third parties. We use trusted service providers to operate the App:</p>
-        <ul>
-            <li><strong>Google Firebase:</strong> Database, authentication, and image storage.</li>
-            <li><strong>Google Maps:</strong> Mapping services.</li>
-        </ul>
+            <h2>7. Lasten yksityisyys</h2>
+            <p>Palvelu ei ole suunnattu alle 13-vuotiaille lapsille. Emme tietoisesti kerää tietoja alle 13-vuotiailta.
+            </p>
 
-        <h2>4. Your Rights (GDPR)</h2>
-        <p>You have the right to:</p>
-        <ul>
-            <li><strong>Delete your account:</strong> You can permanently delete your account and all your data from the App's Settings menu under "Delete Account". This action is immediate and irreversible.</li>
-            <li><strong>Access your data:</strong> You can view your data within the App's profile section.</li>
-            <li><strong>Report content:</strong> You can report inappropriate content or abusive users directly within the App.</li>
-        </ul>
+            <h2>8. Muutokset</h2>
+            <p>Pidätämme oikeuden päivittää tätä tietosuojaselostetta. Merkittävistä muutoksista ilmoitetaan
+                sovelluksessa.</p>
 
-        <h2>5. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact:</p>
-        <p>Nasratollah Rezai<br>
-        Email: nasratollah.rezai@gmail.com</p>
+            <a href="index.html" class="back-link">← Takaisin etusivulle</a>
+        </div>
+
+        <div class="content hidden" id="en">
+            <h2>1. Data Controller</h2>
+            <p>The service and register are maintained by the developer.</p>
+            <p><strong>Email:</strong> nasratollah.rezai@gmail.com (hereinafter "We" or "Service Provider").</p>
+
+            <h2>2. What Information Do We Collect?</h2>
+            <p>To make the NaapuriSapuska application work as intended, we collect the following information about
+                users:</p>
+
+            <p><strong>A. User-Provided Information</strong></p>
+            <p><strong>Account Information:</strong> Email address, username, and profile picture (upon registration).
+            </p>
+            <p><strong>User-Generated Content:</strong> Images of food you upload to the app, food descriptions, and
+                chat messages you send to other users to arrange pickups.</p>
+
+            <p><strong>B. Automatically Collected Information</strong></p>
+            <p><strong>Location Data:</strong> We collect your precise location (GPS) only when you use the app, so we
+                can show you nearby food listings on the map. We do not track your location in the background when the
+                app is closed.</p>
+            <p><strong>Device Information:</strong> Information about your phone model and operating system for error
+                debugging purposes.</p>
+
+            <h2>3. How Do We Use Your Information?</h2>
+            <p>We use the collected information only for the following purposes:</p>
+            <p><strong>Service Provision:</strong> So you can see food listings on the map and contact other users.</p>
+            <p><strong>Security:</strong> Protecting user accounts and preventing abuse.</p>
+            <p><strong>Communication:</strong> To notify you (e.g., via push notification) when someone is interested in
+                food you've listed.</p>
+            <p><strong>Artificial Intelligence (AI):</strong> We use on-device AI (Machine Learning) to identify food
+                categories from images (e.g., fruit/bread) to speed up listing creation.</p>
+
+            <h2>4. Sharing Information with Third Parties</h2>
+            <p>We do not sell, rent, or share your information with advertisers ("No Tracking"). We share information
+                only with trusted partners required for the technical operation of the service:</p>
+            <p><strong>Google Firebase:</strong> We use Firebase for database, user authentication, and image storage.
+                Data is stored on Google's secure servers (primarily in the EU or in accordance with Privacy Shield
+                agreements).</p>
+            <p><strong>Map Services (Google Maps / Mapbox):</strong> Your location data is processed so we can draw the
+                map and display distances. These services do not permanently store individual user movement history.</p>
+
+            <h2>5. Your Rights (GDPR)</h2>
+            <p>Under the European Union's General Data Protection Regulation, you have the right to:</p>
+            <p><strong>Access:</strong> What information is stored about you.</p>
+            <p><strong>Rectify:</strong> Request correction of incorrect information.</p>
+            <p><strong>Delete ("Right to be Forgotten"):</strong> You can delete your user account and all related
+                information at any time directly from the app's settings ("Delete Account" button) or by contacting us
+                via email. When an account is deleted, chat history and images are also permanently removed from the
+                system.</p>
+
+            <h2>6. Data Retention</h2>
+            <p>We retain your information as long as your user account is active. If you delete your account, the data
+                will be removed from backups within a reasonable time (usually within 30 days).</p>
+
+            <h2>7. Children's Privacy</h2>
+            <p>The service is not intended for children under 13 years of age. We do not knowingly collect information
+                from children under 13.</p>
+
+            <h2>8. Changes</h2>
+            <p>We reserve the right to update this privacy policy. Significant changes will be announced in the app.</p>
+
+            <a href="index.html" class="back-link">← Back to homepage</a>
+        </div>
     </div>
 
     <script>
         function showFi() {
             document.getElementById('fi').classList.remove('hidden');
             document.getElementById('en').classList.add('hidden');
+            document.getElementById('btnFi').classList.add('active');
+            document.getElementById('btnEn').classList.remove('active');
         }
+
         function showEn() {
             document.getElementById('en').classList.remove('hidden');
             document.getElementById('fi').classList.add('hidden');
+            document.getElementById('btnEn').classList.add('active');
+            document.getElementById('btnFi').classList.remove('active');
         }
     </script>
 
 </body>
+
 </html>

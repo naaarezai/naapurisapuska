@@ -18,10 +18,8 @@ migrate_working_dir/
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# VS Code
+.vscode/
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -44,10 +42,61 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# Ympäristömuuttujat (sisältää API-avaimet)
+# ========================================
+# SECURITY: CRITICAL FILES - DO NOT COMMIT
+# ========================================
+
+# Environment variables (API keys, secrets)
 .env
 .env.local
 .env.*.local
 
-# avaimet 
+# Firebase configuration files
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+omat/android/google-services.json
+omat/GoogleService-Info.plist
+omat/Sdk setup ios/GoogleService-Info.plist
+
+# Android signing keys
 android/key.properties
+android/app/upload-keystore.jks
+android/app/*.jks
+
+# CI/CD deployment configs (contains credentials)
+codemagic.yaml
+
+# Private folder with sensitive data
+_PRIVATE_DO_NOT_COMMIT/
+
+# Test results and logs (may contain sensitive info)
+test_*.txt
+test_*.log
+analysis_*.txt
+*_results.txt
+*.log
+
+# Internal documentation (not for public)
+FIREBASE_*.md
+KARTAN_*.md
+KODIN_*.md
+PARANNUS*.md
+PARANNUSEHDOTUKSET.md
+
+# Other sensitive files
+kaikki.txt
+pub_get_error.txt
+help.html
+y/
+
+# ========================================
+# FOLDERS TO IGNORE (Development only)
+# ========================================
+landing_page/
+webapp/
+omat/
+
+# Build folders
+build/
+.dart_tool/
+.firebase/

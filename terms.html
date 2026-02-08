@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Käyttöehdot - NaapuriSapuska</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logo-pieni.png">
+
+    <style>
+        :root {
+            --primary-start: #10B981;
+            --primary-end: #059669;
+            --dark: #0F172A;
+            --gray: #64748B;
+            --gray-light: #94A3B8;
+            --bg-light: #F8FAFC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark);
+            background: var(--bg-light);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            color: white;
+            padding: 60px 24px;
+            margin-bottom: 40px;
+        }
+
+        .header .container {
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .last-updated {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .lang-switch {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .lang-switch button {
+            padding: 10px 20px;
+            margin: 0 8px;
+            border: 2px solid var(--primary-start);
+            background: white;
+            color: var(--primary-start);
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .lang-switch button:hover {
+            background: var(--primary-start);
+            color: white;
+        }
+
+        .lang-switch button.active {
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            color: white;
+        }
+
+        .content {
+            background: white;
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 32px 24px;
+            }
+
+            .header {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <h1>Käyttöehdot</h1>
+            <p class="last-updated">Viimeksi päivitetty: 19.1.2026</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="lang-switch">
+            <button onclick="showFi()" class="active" id="btnFi">🇫🇮 Suomi</button>
+            <button onclick="showEn()" id="btnEn">🇬🇧 English</button>
+        </div>
+
+        <div class="content" id="fi">
+            <h2>1. Yleistä</h2>
+            <p>Tervetuloa käyttämään Naapurisapuska-sovellusta ("Palvelu"). Nämä käyttöehdot säätelevät Palvelun
+                käyttöä. Lataamalla sovelluksen, rekisteröitymällä tai käyttämällä Palvelua hyväksyt nämä ehdot
+                sitovasti.</p>
+            <p>Palvelun tarjoaja ("Me") ylläpitää alustaa, jonka avulla yksityishenkilöt voivat ilmoittaa ja jakaa
+                ylijäämäruokaa muille käyttäjille. Me emme ole ruoan myyjä, valmistaja emmekä jakelija. Toimimme vain
+                teknisenä välittäjänä.</p>
+
+            <h2>2. Palvelun luonne ja vastuunrajoitus (TÄRKEÄ!)</h2>
+            <p>Naapurisapuska on alusta vertaisjakamiselle (peer-to-peer).</p>
+            <p><strong>Ruokaturvallisuus:</strong> Palveluntarjoaja ei tarkista, valvo tai takaa Palvelussa ilmoitetun
+                ruoan laatua, turvallisuutta, hygieniaa tai syömäkelpoisuutta.</p>
+            <p><strong>Käyttäjän vastuu:</strong></p>
+            <p><strong>Luovuttaja:</strong> Vastaat siitä, että luovuttamasi ruoka on syömäkelpoista, oikein säilytettyä
+                ja että tuoteselosteet/allergeenit on mahdollisuuksien mukaan kerrottu.</p>
+            <p><strong>Vastaanottaja:</strong> Noudat ja nautit ruoan täysin omalla vastuullasi. Sinun tulee arvioida
+                ruoan aistinvarainen laatu (haju, ulkonäkö) ennen sen nauttimista.</p>
+            <p><strong>Vapautus vastuusta:</strong> Naapurisapuska ja sen kehittäjät eivät ole vastuussa mistään
+                terveyshaitoista, sairauksista tai vahingoista, jotka aiheutuvat Palvelun kautta jaetusta ruoasta.</p>
+
+            <h2>3. Käyttäjätili ja rekisteröityminen</h2>
+            <p>Sinun tulee olla vähintään 13-vuotias käyttääksesi palvelua.</p>
+            <p>Olet vastuussa salasanasi ja tilisi turvallisuudesta.</p>
+            <p>Sitoudut antamaan itsestäsi totuudenmukaiset tiedot. Valeprofiilien luominen on kiellettyä.</p>
+
+            <h2>4. Käyttäytymissäännöt</h2>
+            <p>Käyttäjänä sitoudut noudattamaan seuraavia sääntöjä:</p>
+            <p><strong>Kunnioitus:</strong> Kohtele muita käyttäjiä asiallisesti chatissa ja noutotilanteissa. Häirintä
+                on ehdottomasti kielletty.</p>
+            <p><strong>Luotettavuus:</strong> Jos sovit noudosta (varaat ruoan), sitoudut saapumaan paikalle sovittuna
+                aikana. Toistuvat "oharit" (no-show) voivat johtaa tilin sulkemiseen.</p>
+            <p><strong>Laillisuus:</strong> Palvelussa ei saa jakaa alkoholia, tupakkatuotteita, lääkkeitä tai laittomia
+                aineita.</p>
+            <p><strong>Ei myyntiä:</strong> Palvelu on tarkoitettu ensisijaisesti ruoan jakamiseen ilmaiseksi tai
+                nimellistä korvausta vastaan hävikin vähentämiseksi, ei ammattimaiseen liiketoimintaan ilman lupaa.</p>
+
+            <h2>5. Sisältö ja oikeudet</h2>
+            <p>Lataamalla kuvan ruoasta palveluun vakuutat, että sinulla on oikeus kuvaan.</p>
+            <p>Annat Naapurisapuskalle oikeuden käyttää, muokata ja esittää lataamaasi sisältöä (esim. ruokakuvat)
+                Palvelun toiminnan puitteissa ja markkinoinnissa.</p>
+            <p>Emme salli K-18 materiaalia tai sopimatonta sisältöä kuvissa.</p>
+
+            <h2>6. Palvelun saatavuus ja muutokset</h2>
+            <p>Pyrimme pitämään Palvelun toiminnassa 24/7, mutta emme takaa sen keskeytyksettömyyttä. Meillä on oikeus
+                muuttaa, keskeyttää tai lopettaa Palvelu tai sen osa milloin tahansa ilman erillistä ilmoitusta (esim.
+                huoltokatkot tai tekniset päivitykset).</p>
+
+            <h2>7. Sopimuksen päättäminen</h2>
+            <p>Meillä on oikeus sulkea käyttäjätilisi ja estää pääsy Palveluun välittömästi, jos:</p>
+            <p>• Rikot näitä käyttöehtoja.<br>
+                • Käytöksesi on uhkaavaa tai häiritsevää muita kohtaan.<br>
+                • Jatkuvasti jaat pilaantunutta ruokaa tai jätät noutamatta varauksia.</p>
+
+            <h2>8. Sovellettava laki</h2>
+            <p>Näihin ehtoihin sovelletaan Suomen lakia. Mahdolliset riitaisuudet pyritään ensisijaisesti ratkaisemaan
+                neuvottelemalla.</p>
+
+            <a href="index.html" class="back-link">← Takaisin etusivulle</a>
+        </div>
+
+        <div class="content hidden" id="en">
+            <h2>1. General</h2>
+            <p>Welcome to using the Naapurisapuska application ("Service"). These terms of use govern the use of the
+                Service. By downloading the application, registering, or using the Service, you bindingly accept these
+                terms.</p>
+            <p>The Service Provider ("We") maintains a platform through which individuals can advertise and share
+                surplus food with other users. We are not a food seller, manufacturer, or distributor. We act only as a
+                technical intermediary.</p>
+
+            <h2>2. Nature of Service and Limitation of Liability (IMPORTANT!)</h2>
+            <p>Naapurisapuska is a peer-to-peer sharing platform.</p>
+            <p><strong>Food Safety:</strong> The Service Provider does not inspect, supervise, or guarantee the quality,
+                safety, hygiene, or edibility of food listed in the Service.</p>
+            <p><strong>User Responsibility:</strong></p>
+            <p><strong>Provider:</strong> You are responsible for ensuring that the food you provide is edible, properly
+                stored, and that ingredients/allergens are disclosed to the extent possible.</p>
+            <p><strong>Recipient:</strong> You pick up and consume food entirely at your own risk. You must assess the
+                sensory quality of the food (smell, appearance) before consuming it.</p>
+            <p><strong>Release from Liability:</strong> Naapurisapuska and its developers are not liable for any health
+                issues, illnesses, or damages resulting from food shared through the Service.</p>
+
+            <h2>3. User Account and Registration</h2>
+            <p>You must be at least 13 years old to use the service.</p>
+            <p>You are responsible for the security of your password and account.</p>
+            <p>You commit to providing truthful information about yourself. Creating fake profiles is prohibited.</p>
+
+            <h2>4. Code of Conduct</h2>
+            <p>As a user, you commit to following these rules:</p>
+            <p><strong>Respect:</strong> Treat other users respectfully in chat and during pickups. Harassment is
+                strictly prohibited.</p>
+            <p><strong>Reliability:</strong> If you arrange a pickup (reserve food), you commit to appearing at the
+                agreed time. Repeated "no-shows" may result in account closure.</p>
+            <p><strong>Legality:</strong> Alcohol, tobacco products, medications, or illegal substances may not be
+                shared in the Service.</p>
+            <p><strong>No Sales:</strong> The Service is primarily intended for sharing food for free or for nominal
+                compensation to reduce waste, not for commercial business without permission.</p>
+
+            <h2>5. Content and Rights</h2>
+            <p>By uploading an image of food to the service, you warrant that you have the rights to the image.</p>
+            <p>You grant Naapurisapuska the right to use, modify, and display your uploaded content (e.g., food images)
+                within the scope of the Service's operation and marketing.</p>
+            <p>We do not allow adult content or inappropriate material in images.</p>
+
+            <h2>6. Service Availability and Changes</h2>
+            <p>We strive to keep the Service operational 24/7, but do not guarantee its uninterrupted availability. We
+                have the right to modify, suspend, or terminate the Service or any part of it at any time without
+                separate notice (e.g., maintenance outages or technical updates).</p>
+
+            <h2>7. Termination of Agreement</h2>
+            <p>We have the right to close your user account and deny access to the Service immediately if:</p>
+            <p>• You violate these terms of use.<br>
+                • Your behavior is threatening or disruptive to others.<br>
+                • You continuously share spoiled food or fail to pick up reservations.</p>
+
+            <h2>8. Applicable Law</h2>
+            <p>Finnish law applies to these terms. Any disputes shall primarily be resolved through negotiation.</p>
+
+            <a href="index.html" class="back-link">← Back to homepage</a>
+        </div>
+    </div>
+
+    <script>
+        function showFi() {
+            document.getElementById('fi').classList.remove('hidden');
+            document.getElementById('en').classList.add('hidden');
+            document.getElementById('btnFi').classList.add('active');
+            document.getElementById('btnEn').classList.remove('active');
+        }
+
+        function showEn() {
+            document.getElementById('en').classList.remove('hidden');
+            document.getElementById('fi').classList.add('hidden');
+            document.getElementById('btnEn').classList.add('active');
+            document.getElementById('btnFi').classList.remove('active');
+        }
+    </script>
+
+</body>
+
+</html>

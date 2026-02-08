@@ -1,100 +1,78 @@
-# 🍌 Naapurisapuska (Napsu)
+# 🍽️ NaapuriSapuska - Landing Page
 
-Naapurisapuska on yhteisöllinen ruoanjakosovellus, jonka tavoitteena on vähentää ruokahävikkiä ja lisätä naapuruston yhteisöllisyyttä. Sovelluksen avulla käyttäjät voivat ilmoittaa ylimääräisestä ruoasta ja muut voivat varata sekä noutaa sen – täysin ilmaiseksi.
+Official landing page for the NaapuriSapuska mobile application.
 
-![Naapurisapuska Banner](assets/logo.png)
+## 🌐 Live Website
 
-## ✨ Ominaisuudet
+Visit: [naapurisapuska.fi](https://naapurisapuska.fi)
 
-*   **🗺️ Karttanäkymä**: Selaa lähellä olevia ruokailmoituksia interaktiivisella kartalla.
-*   **📸 Helppo ilmoittaminen**: Lisää ruokailmoitus kuvalla, kuvauksella ja noutoajalla nopeasti.
-*   **💬 Chat**: Sovi noudosta helposti sovelluksen sisäisellä viestinnällä (turvallinen, osallistujat-only).
-*   **🔔 Ilmoitukset**: Saat ilmoituksen (Push & In-App) kun ilmoitukseesi reagoidaan.
-*   **🤖 Automaattinen siivous**: Cloud Functions poistaa vanhat ilmoitukset automaattisesti.
-*   **🔒 Tietoturva**: Tiukat Firestore-säännöt, yksityiset viestit, ja omistajuuden tarkistus.
-*   **📊 Monitorointi**: Crashlytics virheenjäljitykseen ja Analytics käytön seurantaan.
-*   **🧪 Testattu**: Kattava testaus (Unit & Widget testit) >90% kattavuudella.
+## 📱 About NaapuriSapuska
 
-## 🛠️ Teknologiat
+NaapuriSapuska is a Finnish mobile application that helps reduce food waste by connecting neighbors who want to share surplus food. Available on both iOS and Android.
 
-*   **Frontend**: Flutter (Dart)
-*   **Backend**: Firebase
-    *   **Authentication**: Google Sign-In & Email/Password
-    *   **Firestore**: Reaaliaikainen tietokanta
-    *   **Storage**: Kuvien tallennus (omissa kansioissa)
-    *   **Cloud Functions**: Palvelinlogiikka (Node.js)
-    *   **Crashlytics**: Virheraportointi
-    *   **Analytics**: Käyttäjäanalytiikka
+**Download the app:**
+- [📱 Google Play Store](https://play.google.com/store/apps/details?id=com.napurisapuska.fi)
+- [🍎 Apple App Store](https://apps.apple.com/eg/app/naapurisapuska/id6757681396)
 
-## 🚀 Aloitusopas
+## 🎨 Website Features
 
-### Esivaatimukset
+- Modern, responsive design
+- Mobile-first approach
+- Smooth animations and micro-interactions
+- Glassmorphism effects
+- Bilingual support (Finnish/English)
+- SEO optimized
 
-*   [Flutter SDK](https://docs.flutter.dev/get-started/install) (v3.27+)
-*   Firebase-projekti konfiguroituna
+## 📂 Project Structure
 
-### Asennus
-
-1.  **Kloonaa repositorio**
-    ```bash
-    git clone https://github.com/yourusername/naapurisapuska.git
-    cd naapurisapuska
-    ```
-
-2.  **Asenna riippuvuudet**
-    ```bash
-    flutter pub get
-    ```
-
-3.  **Konfiguroi Firebase**
-    Varmista että `firebase_options.dart` on ajan tasalla.
-
-4.  **Käynnistä sovellus**
-    ```bash
-    flutter run
-    ```
-
-## 🧪 Testaus
-
-Projekti sisältää kattavat yksikkö- ja widget-testit.
-
-```bash
-# Aja kaikki testit
-flutter test
-
-# Aja testit kattavuusraportilla
-flutter test --coverage
+```
+naapurisapuska/
+├── index.html          # Main landing page
+├── styles.css          # All CSS styles
+├── script.js           # JavaScript functionality
+├── privacy.html        # Privacy policy page (bilingual)
+├── terms.html          # Terms of service page (bilingual)
+└── img/                # Image assets
+    ├── kuva1.png
+    ├── kuva2.png
+    ├── kuva3.png
+    ├── kuva4.png
+    ├── kuva5.png
+    ├── kuva6.png
+    ├── kuva7.png
+    └── logo-pieni.png
 ```
 
-## ☁️ Cloud Functions
+## 🚀 Deployment
 
-Sijainti: `/functions`
+This site is designed for GitHub Pages deployment. Simply push to the main branch and enable GitHub Pages in repository settings.
 
-*   `cleanupOldFoodItems`: Poistaa yli 24h vanhat/noutamattomat ilmoitukset (ajastettu).
-*   `deleteOldImages`: Poistaa kuvat Firestoresta poistetuista ilmoituksista.
+## 🎨 Design System
 
-Deployssä:
-```bash
-firebase deploy --only functions
-```
+**Color Palette:**
+- Primary: Emerald Green (#10B981 → #059669)
+- Accent: Amber (#F59E0B → #D97706)
+- Dark: Slate (#0F172A)
 
-## 🔒 Tietoturva
+**Typography:**
+- Font Family: Inter (Google Fonts)
+- Modern, clean, and highly readable
 
-*   Viestejä voi lukea vain keskustelun osallistujat.
-*   Vain omistaja voi muokata/poistaa omia ilmoituksiaan.
-*   Tiedostokoot (kuvat) rajoitettu Storage-säännöissä.
+## 📄 Legal Pages
 
-## 📱 Julkaisu
+- **Privacy Policy** (`privacy.html`): Updated 19.1.2026
+- **Terms of Service** (`terms.html`): Updated 19.1.2026
 
-```bash
-# Android Release
-flutter build apk --release
+Both pages include Finnish and English versions with language switcher.
 
-# Web Deployment
-flutter build web --release
-firebase deploy --only hosting
-```
+## 📝 License
 
-## 📄 Lisenssi
+© 2025 NaapuriSapuska Oy. All rights reserved.
 
-MIT
+## 📧 Contact
+
+For inquiries: nasratollah.rezai@gmail.com
+
+---
+
+**Note:** This repository contains only the public-facing website. The mobile application source code is in a separate private repository.
