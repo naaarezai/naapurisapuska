@@ -1,7 +1,7 @@
 name: naapurisapuska
 description: Naapuruston ruokahävikki-sovellus.
 publish_to: 'none'
-version: 1.0.28+28
+version: 1.0.29+29
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -50,6 +50,7 @@ dependencies:
   # ML Kit - ilmainen offline-kuvan tunnistus
   google_mlkit_image_labeling: ^0.14.1
   flutter_local_notifications: ^19.5.0
+  flutter_app_badger: ^1.5.0
 
 
   # UI Parannukset

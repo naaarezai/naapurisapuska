@@ -256,6 +256,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
       _checkPermissionAndRefreshLocation();
+      _notificationService.clearBadge();
     }
   }
 
@@ -670,6 +671,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                 _lastViewedNotificationTime = now;
               });
               _saveLastViewedTime(now); // Persist time
+              _notificationService.clearBadge(); // Clear iOS badge
 
               Navigator.push(
                 context,

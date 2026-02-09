@@ -3,7 +3,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter_map/flutter_map.dart'; // Flutter Map
-import 'package:latlong2/latlong.dart'; // LatLng
 import 'package:firebase_auth/firebase_auth.dart';
 import '../models/food_item.dart';
 import '../services/rating_service.dart';
@@ -15,6 +14,7 @@ import '../utils/app_theme.dart';
 import '../utils/haptic_helper.dart';
 import '../l10n/app_localizations.dart';
 import '../utils/category_helper.dart';
+import '../utils/privacy_helper.dart';
 
 class FoodDetailScreen extends StatefulWidget {
   final FoodItem foodItem;
@@ -427,11 +427,19 @@ class _FoodDetailScreenState extends State<FoodDetailScreen> {
         final isDark = Theme.of(context).brightness == Brightness.dark;
         final urlTemplate = isDark ? _cartoDark : _cartoLight;
 
-        // Minikartta (Flutter Map)
+        // Turvallisuus: Karkista sijainti (~100m tarkkuus) ettei näy tarkka osoite
+        final obscuredLocation = PrivacyHelper.obscureLocation(
+          foodItem.latitude,
+          foodItem.longitude,
+          decimals: 3, // ~100m tarkkuus
+        );
+
+        // Minikartta (Flutter Map) - Näyttää alueen, ei tarkkaa sijaintia
         final miniMap = FlutterMap(
           options: MapOptions(
-            initialCenter: LatLng(foodItem.latitude, foodItem.longitude),
-            initialZoom: 15.0,
+            initialCenter: obscuredLocation,
+            initialZoom:
+                14.0, // Zoomattu kauemmaksi (oli 15.0) - ei näy osoitetta
             interactionOptions: const InteractionOptions(
               flags: InteractiveFlag.none, // Static map
             ),
@@ -442,12 +450,33 @@ class _FoodDetailScreenState extends State<FoodDetailScreen> {
               subdomains: const ['a', 'b', 'c', 'd'],
               userAgentPackageName: 'com.example.naapurisapuska',
             ),
+            // Näytä ympyrä pisteen sijasta - suojaa yksityisyyttä
+            CircleLayer(
+              circles: [
+                CircleMarker(
+                  point: obscuredLocation,
+                  radius: 100, // 100 metrin säde
+                  useRadiusInMeter: true,
+                  color: Colors.red.withValues(alpha: 0.2),
+                  borderColor: Colors.red,
+                  borderStrokeWidth: 2,
+                ),
+              ],
+            ),
+            // Pieni merkki keskelle
             MarkerLayer(
               markers: [
                 Marker(
-                  point: LatLng(foodItem.latitude, foodItem.longitude),
-                  child: const Icon(Icons.location_on,
-                      color: Colors.red, size: 40),
+                  point: obscuredLocation,
+                  width: 12,
+                  height: 12,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.white, width: 2),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -744,9 +773,8 @@ class _FoodDetailScreenState extends State<FoodDetailScreen> {
                                           ),
                                         ),
                                         Text(
-                                          widget.foodItem.userName ??
-                                              AppLocalizations.of(context)!
-                                                  .anonymousUser,
+                                          PrivacyHelper.anonymizeName(
+                                              widget.foodItem.userName),
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 18),

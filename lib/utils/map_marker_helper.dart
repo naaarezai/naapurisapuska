@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
 import '../models/food_item.dart';
 import 'category_helper.dart';
+import 'privacy_helper.dart';
 
 /// Helper-luokka kartan markkereiden luomiseen Flutter Mapille
 class MapMarkerHelper {
@@ -19,11 +19,18 @@ class MapMarkerHelper {
           item.latitude.isFinite &&
           item.longitude.isFinite &&
           item.status == ReservationStatus.available) {
+        // Turvallisuus: Karkista sijainti ~100m tarkkuuteen
+        final obscuredLocation = PrivacyHelper.obscureLocation(
+          item.latitude,
+          item.longitude,
+          decimals: 3,
+        );
+
         markers.add(
           Marker(
             width: 40.0,
             height: 40.0,
-            point: LatLng(item.latitude, item.longitude),
+            point: obscuredLocation, // Käytä karkistettua sijaintia
             child: GestureDetector(
               onTap: onMarkerTap != null ? () => onMarkerTap(item.id) : null,
               child: _buildCategoryMarker(item.category),

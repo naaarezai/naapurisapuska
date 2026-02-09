@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'dart:async';
 import '../services/chat_service.dart';
 import '../services/user_service.dart';
+import '../services/notification_service.dart';
 import '../models/user_model.dart';
 import '../utils/error_helper.dart';
 import '../l10n/app_localizations.dart';
@@ -41,6 +42,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
     // 1. Initial mark as read
     _chatService.markMessagesAsRead(widget.otherUserId);
+
+    // Clear iOS badge when chat opens
+    NotificationService().clearBadge();
 
     // 2. Listen for NEW incoming messages while screen is open
     // This fixes the issue where receiving a message while in chat leaves the badge on

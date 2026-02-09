@@ -73,6 +73,20 @@ exports.sendNewFoodNotification = functions.firestore
         creatorId: foodData.userId || "",
         itemId: snapshot.id
       },
+      apns: {
+        payload: {
+          aps: {
+            badge: 1,
+            sound: "default"
+          }
+        }
+      },
+      android: {
+        notification: {
+          sound: "default",
+          notificationCount: 1
+        }
+      },
       tokens: tokensToSend,
     };
 
