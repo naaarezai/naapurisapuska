@@ -82,8 +82,9 @@ class NotificationService {
         // ✅ KORJAUS: iOS näyttää FCM-ilmoituksen automaattisesti foregroundissa
         // Älä näytä duplikaatti local notificationia
         if (Platform.isIOS) {
-          if (kDebugMode)
+          if (kDebugMode) {
             print('📱 iOS: FCM handles notification, skipping local');
+          }
           return;
         }
 
