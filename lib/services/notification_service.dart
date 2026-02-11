@@ -6,7 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:flutter/material.dart'; // TÄMÄ VAIHDETTIIN (sisältää Color-luokan)
 import 'package:flutter/foundation.dart';
 import 'package:dart_geohash/dart_geohash.dart';
-import 'package:flutter_app_badger/flutter_app_badger.dart';
+import 'package:app_badge_plus/app_badge_plus.dart';
 
 // Määritellään taustakäsittelijä heti tiedoston alkuun (top-level)
 @pragma('vm:entry-point')
@@ -139,8 +139,8 @@ class NotificationService {
   /// Clear iOS app icon badge count
   Future<void> clearBadge() async {
     try {
-      // Use flutter_app_badger to clear badge on both iOS and Android
-      await FlutterAppBadger.removeBadge();
+      // Use app_badge_plus to clear badge on both iOS and Android
+      await AppBadgePlus.updateBadge(0);
       if (kDebugMode) print('✅ Badge cleared');
     } catch (e) {
       if (kDebugMode) print('❌ Error clearing badge: $e');
