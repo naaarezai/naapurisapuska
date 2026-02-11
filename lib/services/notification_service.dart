@@ -7,6 +7,7 @@ import 'package:flutter/material.dart'; // TÄMÄ VAIHDETTIIN (sisältää Color
 import 'package:flutter/foundation.dart';
 import 'package:dart_geohash/dart_geohash.dart';
 import 'package:app_badge_plus/app_badge_plus.dart';
+import 'dart:io'; // ✅ For Platform check
 
 // Määritellään taustakäsittelijä heti tiedoston alkuun (top-level)
 @pragma('vm:entry-point')
@@ -77,6 +78,16 @@ class NotificationService {
         }
 
         RemoteNotification? notification = message.notification;
+
+        // ✅ KORJAUS: iOS näyttää FCM-ilmoituksen automaattisesti foregroundissa
+        // Älä näytä duplikaatti local notificationia
+        if (Platform.isIOS) {
+          if (kDebugMode)
+            print('📱 iOS: FCM handles notification, skipping local');
+          return;
+        }
+
+        // Android: Näytä local notification
         AndroidNotification? android = message.notification?.android;
 
         if (notification != null && android != null) {
@@ -94,11 +105,6 @@ class NotificationService {
                 priority: Priority.high,
                 // KORJAUS: Poistettiin "const" ja varmistettiin oikea import
                 color: Color(0xFF388E3C),
-              ),
-              iOS: const DarwinNotificationDetails(
-                presentAlert: true,
-                presentBadge: true,
-                presentSound: true,
               ),
             ),
           );
